@@ -579,3 +579,10 @@ body.dark .mobile-detail-close:hover {
     display: none !important;
   }
 }
+
+/* FINAL: hide inline detail panel on mobile; use overlay only */
+@media (max-width: 899px) {
+  body #detail-section {
+    display: none !important;
+  }
+}
