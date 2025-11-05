@@ -119,16 +119,32 @@ h1 {
   margin-top: 1rem;
   background: white;
   color: #111827;
+  table-layout: fixed; /* let columns share space more evenly */
 }
 
-/* ----- Table alignment tweaks (desktop default) ----- */
+#cards-table th,
+#cards-table td {
+  padding: 0.3rem 0.4rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.8rem;
+}
 
-/* centre "Art" header only, leave thumbnails themselves as-is */
+/* Art header centred, others default to left unless overridden below */
+#cards-table th {
+  text-align: left;
+  background: #f9fafb;
+  color: #111827;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Centre the "Art" header only */
 #cards-table th:first-child {
   text-align: center;
 }
 
-/* make character, volume, rarity, reward centred by default */
+/* Centre Character, Volume, Rarity, Reward on desktop */
 #cards-table th:nth-child(3),
 #cards-table td:nth-child(3),
 #cards-table th:nth-child(4),
@@ -140,21 +156,34 @@ h1 {
   text-align: center;
 }
 
-/* help columns share space more evenly without touching padding */
-#cards-table {
-  table-layout: fixed;
+#cards-table th.sort-asc::after {
+  content: " ▲";
+  font-size: 0.7rem;
 }
 
-/* keep the art column narrow so text columns share the rest */
+#cards-table th.sort-desc::after {
+  content: " ▼";
+  font-size: 0.7rem;
+}
+
+#cards-table tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+#cards-table tbody tr:hover {
+  background-color: #e5e7eb;
+}
+
+/* Keep art column narrow; let the rest share remaining space */
 #cards-table th:nth-child(1),
 #cards-table td:nth-child(1) {
-  width: 70px; /* matches your .thumb-cell width */
+  width: 70px; /* matches .thumb-cell */
 }
 
-/* give Card name a predictable slice; others share remaining */
+/* Shrink Card name column a bit so the gap isn’t huge */
 #cards-table th.col-cardName,
 #cards-table td.col-cardName {
-  width: 30%;
+  width: 24%;
 }
 
 
@@ -348,6 +377,11 @@ h1 {
   }
 
   /* mobile column alignment */
+
+/* Art header left-aligned on mobile */
+  #cards-table th:first-child {
+   text-align: left;
+}
 
   /* Volume, Rarity, Reward centred on mobile */
   #cards-table th:nth-child(3),
