@@ -476,7 +476,7 @@ body.dark .wiki-note a:hover {
 @media (min-width: 900px) {
   #detail-section {
     position: sticky;
-    top: 1rem;       /* adjust if you want it closer to the top */
+    top: 1rem;
     align-self: flex-start;
   }
 }
@@ -490,7 +490,7 @@ body.dark .wiki-note a:hover {
   inset: 0;
   z-index: 100;
   background: rgba(15, 23, 42, 0.85);
-  display: none;              /* stays hidden until .open is added */
+  display: none;
   overflow-y: auto;
 }
 
@@ -508,7 +508,7 @@ body.dark .wiki-note a:hover {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.45);
 }
 
-/* Reuse existing detail styling but adapt headings a bit */
+/* Headings */
 .mobile-detail-heading {
   margin: 0 0 0.5rem;
   font-size: 1rem;
@@ -522,7 +522,7 @@ body.dark .wiki-note a:hover {
   font-weight: 600;
 }
 
-/* Image in overlay */
+/* Image */
 .mobile-detail-image-wrapper {
   display: flex;
   justify-content: center;
@@ -574,37 +574,43 @@ body.dark .mobile-detail-close:hover {
   background: #f9fafb;
 }
 
-/* Mobile navigation arrows inside the overlay */
+/* =========================================================
+   MOBILE NAVIGATION ARROWS — FIXED + FADE
+   ========================================================= */
+
 .mobile-nav-arrow {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 40%;
   transform: translateY(-50%);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
   border: none;
   background: rgba(15, 23, 42, 0.85);
   color: #f9fafb;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  z-index: 200;
+  opacity: 1;
+  transition: opacity 0.25s ease, background 0.25s ease;
 }
 
 .mobile-nav-prev {
-  left: 0.25rem;
+  left: 0.6rem;
 }
 
 .mobile-nav-next {
-  right: 0.25rem;
+  right: 0.6rem;
 }
 
 .mobile-nav-arrow:hover {
   background: rgba(15, 23, 42, 1);
 }
 
-/* Dark mode tweak */
+/* Dark mode */
 body.dark .mobile-nav-arrow {
   background: rgba(148, 163, 184, 0.9);
   color: #020617;
@@ -614,6 +620,11 @@ body.dark .mobile-nav-arrow:hover {
   background: rgba(248, 250, 252, 0.95);
 }
 
+/* Fade-out state for hidden arrows */
+.mobile-nav-arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* Overlay is mobile-only; never show on desktop */
 @media (min-width: 900px) {
@@ -628,7 +639,8 @@ body.dark .mobile-nav-arrow:hover {
     display: none !important;
   }
 }
-/* Reduce horizontal padding on small screens to save width */
+
+/* Reduce horizontal padding on small screens */
 @media (max-width: 768px) {
   body {
     padding-left: 0.5rem;
