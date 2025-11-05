@@ -356,6 +356,7 @@ h1 {
   }
 
   /* Volume, Rarity, Reward centred on mobile */
+  #cards-table th:nth-child(1),
   #cards-table th:nth-child(4),
   #cards-table td:nth-child(4),
   #cards-table th:nth-child(5),
