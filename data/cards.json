@@ -141,7 +141,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "Together, we'll uncover the truth.",
-    "image": "limavol2"
+    "image": "images/limavol2.png"
   },
  {
     "id": "killianvol2",
@@ -154,7 +154,7 @@
     "rarity": "Unommon",
     "rewardAmount": 4,
     "message": "Rules are made to be broken.",
-    "image": "killianvol2"
+    "image": "images/killianvol2.png"
   },
  {
     "id": "shaarnezvol2",
@@ -167,7 +167,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "You're bittersweet like wild honey.",
-    "image": "shaarnezvol2"
+    "image": "images/shaarnezvol2.png"
   },
  {
     "id": "cainvol2",
@@ -180,7 +180,7 @@
     "rarity": "Rare",
     "rewardAmount": 8,
     "message": "There are no winners in a dispute between loved ones.",
-    "image": "cainvol2"
+    "image": "images/cainvol2.png"
   },
  {
     "id": "johnvol2",
@@ -193,7 +193,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "I'm willing to wait for you for an eternity.",
-    "image": "johnvol2"
+    "image": "images/johnvol2.png"
   },
 
   {
@@ -207,7 +207,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Are you ready to forget reality and dive into sin?",
-    "image": "mimivol2"
+    "image": "images/mimivol2.png"
   },
   {
     "id": "onyxvol3",
