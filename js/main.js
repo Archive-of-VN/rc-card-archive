@@ -56,6 +56,17 @@ function initTheme() {
   applyTheme(theme);
 }
 
+// Format reward as a compact emoji string, e.g. "20💎" or "8🍵"
+function formatRewardShort(card) {
+  if (!card.reward || card.rewardAmount == null) return "";
+
+  const type = card.reward.toLowerCase();
+  const isCups = type === "cups" || type === "cup";
+
+  const symbol = isCups ? "🍵" : "💎";
+  return `${card.rewardAmount}${symbol}`;
+}
+
 // --- 3. Initialisation & data loading ---
 
 async function loadCards() {
@@ -435,10 +446,7 @@ function render() {
     const tr = document.createElement("tr");
     tr.dataset.cardId = card.id;
 
-    const rewardDisplay =
-      card.reward && card.rewardAmount != null
-        ? `${card.rewardAmount} ${card.reward.toLowerCase()}`
-        : (card.reward ? card.reward.toLowerCase() : "");
+    const rewardDisplay = formatRewardShort(card);
 
     const thumbHtml = card.image
       ? `<img src="${card.image}"
@@ -503,12 +511,7 @@ function showCardDetails(card) {
     : (card.gender ?? "");
   genderEl.textContent = genderDisplay;
 
-  if (card.reward && card.rewardAmount != null) {
-    rewardEl.textContent =
-      `${card.rewardAmount} ${card.reward.toLowerCase()}`;
-  } else {
-    rewardEl.textContent = card.reward ? card.reward.toLowerCase() : "";
-  }
+  rewardEl.textContent = formatRewardShort(card);
 
   rarityEl.textContent = card.rarity ?? "";
   messageEl.textContent = card.message ?? "";
@@ -550,13 +553,8 @@ function showCardDetails(card) {
     if (mBookEl) mBookEl.textContent = card.book ?? "";
     if (mGenderEl) mGenderEl.textContent = genderDisplay;
     if (mRewardEl) {
-      if (card.reward && card.rewardAmount != null) {
-        mRewardEl.textContent =
-          `${card.rewardAmount} ${card.reward.toLowerCase()}`;
-      } else {
-        mRewardEl.textContent = card.reward ? card.reward.toLowerCase() : "";
-      }
-    }
+    mRewardEl.textContent = formatRewardShort(card);
+  }
     if (mRarityEl) mRarityEl.textContent = card.rarity ?? "";
     if (mMessageEl) mMessageEl.textContent = card.message ?? "";
 
