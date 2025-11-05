@@ -205,6 +205,26 @@ function attachEventListeners() {
     }
   });
 
+  // Mobile detail overlay close handlers
+  const mobileOverlay = document.getElementById("mobile-detail-overlay");
+  const mobileClose = document.getElementById("mobile-detail-close");
+
+  if (mobileOverlay && mobileClose) {
+    mobileClose.addEventListener("click", () => {
+      mobileOverlay.classList.remove("open");
+      mobileOverlay.classList.add("hidden");
+    });
+
+    // click on the dark backdrop closes as well
+    mobileOverlay.addEventListener("click", (event) => {
+      if (event.target === mobileOverlay) {
+        mobileOverlay.classList.remove("open");
+        mobileOverlay.classList.add("hidden");
+      }
+    });
+  }
+
+
   // Theme toggle
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
@@ -461,6 +481,7 @@ function showCardDetails(card) {
   if (placeholder) placeholder.classList.add("hidden");
   if (content) content.classList.remove("hidden");
 
+  // --- desktop / regular detail panel ---
   if (card.image && imageWrapper && imageEl) {
     imageWrapper.classList.remove("hidden");
     imageEl.src = card.image;
@@ -491,6 +512,59 @@ function showCardDetails(card) {
 
   rarityEl.textContent = card.rarity ?? "";
   messageEl.textContent = card.message ?? "";
+
+  // --- mobile overlay version ---
+  if (window.innerWidth < 900) {
+    const mobileOverlay = document.getElementById("mobile-detail-overlay");
+    const mImageWrapper = document.getElementById("mobile-detail-image-wrapper");
+    const mImageEl = document.getElementById("mobile-detail-image");
+    const mTitleEl = document.getElementById("mobile-detail-title");
+    const mCharEl = document.getElementById("mobile-detail-character");
+    const mCardNameEl = document.getElementById("mobile-detail-cardName");
+    const mVolumeEl = document.getElementById("mobile-detail-volume");
+    const mBookEl = document.getElementById("mobile-detail-book");
+    const mGenderEl = document.getElementById("mobile-detail-gender");
+    const mRewardEl = document.getElementById("mobile-detail-reward");
+    const mRarityEl = document.getElementById("mobile-detail-rarity");
+    const mMessageEl = document.getElementById("mobile-detail-message");
+
+    if (!mobileOverlay) return;
+
+    // image
+    if (card.image && mImageWrapper && mImageEl) {
+      mImageWrapper.classList.remove("hidden");
+      mImageEl.src = card.image;
+      mImageEl.alt = `${card.character ?? ""} – ${card.cardName ?? ""}`;
+    } else if (mImageWrapper && mImageEl) {
+      mImageWrapper.classList.add("hidden");
+      mImageEl.removeAttribute("src");
+      mImageEl.alt = "";
+    }
+
+    // text fields
+    if (mTitleEl) mTitleEl.textContent =
+      `${card.character ?? ""} – ${card.cardName ?? ""}`;
+    if (mCharEl) mCharEl.textContent = card.character ?? "";
+    if (mCardNameEl) mCardNameEl.textContent = card.cardName ?? "";
+    if (mVolumeEl) mVolumeEl.textContent = card.volume ?? "";
+    if (mBookEl) mBookEl.textContent = card.book ?? "";
+    if (mGenderEl) mGenderEl.textContent = genderDisplay;
+    if (mRewardEl) {
+      if (card.reward && card.rewardAmount != null) {
+        mRewardEl.textContent =
+          `${card.rewardAmount} ${card.reward.toLowerCase()}`;
+      } else {
+        mRewardEl.textContent = card.reward ? card.reward.toLowerCase() : "";
+      }
+    }
+    if (mRarityEl) mRarityEl.textContent = card.rarity ?? "";
+    if (mMessageEl) mMessageEl.textContent = card.message ?? "";
+
+    // show overlay
+    mobileOverlay.classList.remove("hidden");
+    mobileOverlay.classList.add("open");
+    mobileOverlay.scrollTop = 0;
+  }
 }
 
 // --- 6. Kick off ---

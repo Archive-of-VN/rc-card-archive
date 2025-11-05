@@ -474,3 +474,102 @@ body.dark .wiki-note a:hover {
     align-self: flex-start;
   }
 }
+
+/* =========================================================
+   MOBILE DETAIL OVERLAY
+   ========================================================= */
+
+.mobile-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.85);
+  display: none;              /* stays hidden until .open is added */
+  overflow-y: auto;
+}
+
+.mobile-detail-overlay.open {
+  display: block;
+}
+
+.mobile-detail-inner {
+  max-width: 480px;
+  margin: 1.5rem auto 2rem;
+  padding: 1rem 1.25rem 1.25rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.45);
+}
+
+/* Reuse existing detail styling but adapt headings a bit */
+.mobile-detail-heading {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.mobile-detail-inner #mobile-detail-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Image in overlay */
+.mobile-detail-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.mobile-detail-image-wrapper img {
+  max-width: 220px;
+  max-height: 260px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.35);
+}
+
+/* Close button */
+.mobile-detail-close {
+  border: none;
+  background: #0f172a;
+  color: #f9fafb;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  float: right;
+  cursor: pointer;
+}
+
+.mobile-detail-close:hover {
+  background: #111827;
+}
+
+/* Dark mode tweaks */
+body.dark .mobile-detail-inner {
+  background: #020617;
+  border: 1px solid #334155;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.8);
+}
+
+body.dark .mobile-detail-heading,
+body.dark #mobile-detail-title {
+  color: #e5e7eb;
+}
+
+body.dark .mobile-detail-close {
+  background: #e5e7eb;
+  color: #020617;
+}
+
+body.dark .mobile-detail-close:hover {
+  background: #f9fafb;
+}
+
+/* Overlay is mobile-only; never show on desktop */
+@media (min-width: 900px) {
+  .mobile-detail-overlay {
+    display: none !important;
+  }
+}

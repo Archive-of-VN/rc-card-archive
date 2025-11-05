@@ -146,6 +146,60 @@
     </section>
   </div>
 
+<!-- Mobile detail overlay -->
+<div id="mobile-detail-overlay" class="mobile-detail-overlay hidden">
+  <div class="mobile-detail-inner">
+    <button
+      type="button"
+      id="mobile-detail-close"
+      class="mobile-detail-close"
+    >
+      Close ✕
+    </button>
+
+    <h2 class="mobile-detail-heading">Card details</h2>
+
+    <div id="mobile-detail-image-wrapper" class="mobile-detail-image-wrapper hidden">
+      <img id="mobile-detail-image" alt="" />
+    </div>
+
+    <h3 id="mobile-detail-title"></h3>
+
+    <dl>
+      <div class="detail-row">
+        <dt>Character</dt>
+        <dd id="mobile-detail-character"></dd>
+      </div>
+      <div class="detail-row">
+        <dt>Card name</dt>
+        <dd id="mobile-detail-cardName"></dd>
+      </div>
+      <div class="detail-row">
+        <dt>Volume</dt>
+        <dd id="mobile-detail-volume"></dd>
+      </div>
+      <div class="detail-row">
+        <dt>Rarity</dt>
+        <dd id="mobile-detail-rarity"></dd>
+      </div>
+      <div class="detail-row">
+        <dt>Reward</dt>
+        <dd id="mobile-detail-reward"></dd>
+      </div>
+      <div class="detail-row">
+        <dt>Book</dt>
+        <dd id="mobile-detail-book"></dd>
+      </div>
+      <div class="detail-row">
+        <dt>Gender</dt>
+        <dd id="mobile-detail-gender"></dd>
+      </div>
+    </dl>
+
+    <p id="mobile-detail-message" class="detail-message"></p>
+  </div>
+</div>
+
   <script src="js/main.js"></script>
 
   <button id="back-to-top" class="back-to-top hidden" type="button">
