@@ -499,6 +499,7 @@ body.dark .wiki-note a:hover {
 }
 
 .mobile-detail-inner {
+  position: relative;
   max-width: 480px;
   margin: 1.5rem auto 2rem;
   padding: 1rem 1.25rem 1.25rem;
@@ -572,6 +573,47 @@ body.dark .mobile-detail-close {
 body.dark .mobile-detail-close:hover {
   background: #f9fafb;
 }
+
+/* Mobile navigation arrows inside the overlay */
+.mobile-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.85);
+  color: #f9fafb;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mobile-nav-prev {
+  left: 0.25rem;
+}
+
+.mobile-nav-next {
+  right: 0.25rem;
+}
+
+.mobile-nav-arrow:hover {
+  background: rgba(15, 23, 42, 1);
+}
+
+/* Dark mode tweak */
+body.dark .mobile-nav-arrow {
+  background: rgba(148, 163, 184, 0.9);
+  color: #020617;
+}
+
+body.dark .mobile-nav-arrow:hover {
+  background: rgba(248, 250, 252, 0.95);
+}
+
 
 /* Overlay is mobile-only; never show on desktop */
 @media (min-width: 900px) {

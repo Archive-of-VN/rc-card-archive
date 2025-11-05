@@ -20,6 +20,10 @@ let currentSort = {
   direction: "asc"
 };
 
+let currentList = [];
+let currentIndex = -1;
+
+
 // --- 2. Theme (light/dark) ---
 
 function applyTheme(theme) {
@@ -181,18 +185,22 @@ function attachEventListeners() {
   });
 
   // Row click → detail view
-  tableBody.addEventListener("click", event => {
-    const row = event.target.closest("tr");
-    if (!row) return;
+  tableBody.addEventListener("click", (event) => {
+  const row = event.target.closest("tr");
+  if (!row) return;
 
-    const cardId = row.dataset.cardId;
-    if (!cardId) return;
+  const cardId = row.dataset.cardId;
+  if (!cardId) return;
 
-    const card = cards.find(c => c.id === cardId);
-    if (card) {
-      showCardDetails(card);
-    }
-  });
+  const card = cards.find(c => c.id === cardId);
+  if (!card) return;
+
+  // Set currentIndex within the current filtered + sorted list
+  const idx = currentList.findIndex(c => c.id === cardId);
+  currentIndex = idx;
+
+  showCardDetails(card);
+});
 
   // Back to top
   if (backToTopBtn) {
@@ -226,7 +234,6 @@ function attachEventListeners() {
       mobileOverlay.classList.add("hidden");
     });
 
-    // click on the dark backdrop closes as well
     mobileOverlay.addEventListener("click", (event) => {
       if (event.target === mobileOverlay) {
         mobileOverlay.classList.remove("open");
@@ -235,6 +242,23 @@ function attachEventListeners() {
     });
   }
 
+  // Mobile navigation arrows
+  const mobilePrev = document.getElementById("mobile-detail-prev");
+  const mobileNext = document.getElementById("mobile-detail-next");
+
+  if (mobilePrev) {
+    mobilePrev.addEventListener("click", (event) => {
+      event.stopPropagation();
+      showPrevCard();
+    });
+  }
+
+  if (mobileNext) {
+    mobileNext.addEventListener("click", (event) => {
+      event.stopPropagation();
+      showNextCard();
+    });
+  }
 
   // Theme toggle
   if (themeToggleBtn) {
@@ -440,6 +464,9 @@ function render() {
   const filtered = getFilteredCards();
   const sorted = sortCards(filtered);
 
+  // keep the current navigation list in sync with what the user sees
+  currentList = sorted;
+
   tableBody.innerHTML = "";
 
   sorted.forEach(card => {
@@ -468,6 +495,24 @@ function render() {
 
   resultsCount.textContent =
     `${sorted.length} card${sorted.length === 1 ? "" : "s"} shown`;
+}
+
+function showPrevCard() {
+  if (!currentList || currentIndex <= 0) return;
+  currentIndex -= 1;
+  const card = currentList[currentIndex];
+  if (card) {
+    showCardDetails(card);
+  }
+}
+
+function showNextCard() {
+  if (!currentList || currentIndex < 0 || currentIndex >= currentList.length - 1) return;
+  currentIndex += 1;
+  const card = currentList[currentIndex];
+  if (card) {
+    showCardDetails(card);
+  }
 }
 
 function showCardDetails(card) {
@@ -558,10 +603,31 @@ function showCardDetails(card) {
     if (mRarityEl) mRarityEl.textContent = card.rarity ?? "";
     if (mMessageEl) mMessageEl.textContent = card.message ?? "";
 
+       // Show/hide prev/next arrows based on currentIndex
+    const mPrevBtn = document.getElementById("mobile-detail-prev");
+    const mNextBtn = document.getElementById("mobile-detail-next");
+
+    if (mPrevBtn) {
+      if (currentIndex > 0) {
+        mPrevBtn.classList.remove("hidden");
+      } else {
+        mPrevBtn.classList.add("hidden");
+      }
+    }
+
+    if (mNextBtn) {
+      if (currentIndex >= 0 && currentIndex < currentList.length - 1) {
+        mNextBtn.classList.remove("hidden");
+      } else {
+        mNextBtn.classList.add("hidden");
+      }
+    }
+
     // show overlay
     mobileOverlay.classList.remove("hidden");
     mobileOverlay.classList.add("open");
     mobileOverlay.scrollTop = 0;
+
   }
 }
 
