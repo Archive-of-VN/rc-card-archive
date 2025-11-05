@@ -586,3 +586,10 @@ body.dark .mobile-detail-close:hover {
     display: none !important;
   }
 }
+/* Reduce horizontal padding on small screens to save width */
+@media (max-width: 768px) {
+  body {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
