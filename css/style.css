@@ -481,6 +481,14 @@ body.dark .wiki-note a:hover {
   }
 }
 
+/* Hide the inline detail section on mobile;
+   mobile uses the full-screen overlay instead */
+@media (max-width: 899px) {
+  #detail-section {
+    display: none;
+  }
+}
+
 /* =========================================================
    MOBILE DETAIL OVERLAY
    ========================================================= */
