@@ -1,0 +1,498 @@
+// --- 1. State & DOM references ---
+
+const tableBody = document.querySelector("#cards-table tbody");
+const resultsCount = document.querySelector("#results-count");
+const backToTopBtn = document.getElementById("back-to-top");
+
+const searchInput = document.getElementById("search-input");
+const filterVolume = document.getElementById("filter-volume");
+const filterBook = document.getElementById("filter-book");
+const filterGender = document.getElementById("filter-gender");
+const filterReward = document.getElementById("filter-reward");
+const filterRarity = document.getElementById("filter-rarity");
+
+const themeToggleBtn = document.getElementById("theme-toggle");
+
+let cards = [];
+
+let currentSort = {
+  key: "volume",
+  direction: "asc"
+};
+
+// --- 2. Theme (light/dark) ---
+
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+
+  if (isDark) {
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.textContent = isDark ? "Light mode" : "Dark mode";
+  }
+}
+
+function initTheme() {
+  let theme = "light";
+
+  try {
+    const stored = localStorage.getItem("theme");
+    if (stored === "dark" || stored === "light") {
+      theme = stored;
+    } else if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      theme = "dark";
+    }
+  } catch (e) {
+    // ignore storage errors
+  }
+
+  applyTheme(theme);
+}
+
+// --- 3. Initialisation & data loading ---
+
+async function loadCards() {
+  const response = await fetch("data/cards.json");
+  cards = await response.json();
+
+  // Preserve original order for stable sorting
+  cards.forEach((card, index) => {
+    card._index = index;
+  });
+}
+
+async function init() {
+  await loadCards();
+  initTheme();
+  populateFilterOptions();
+  attachEventListeners();
+  render();
+}
+
+// --- 4. Filters & events ---
+
+function populateFilterOptions() {
+  const volumes = new Set();
+  const books = new Set();
+  const rarities = new Set();
+  const genders = new Set();
+
+  cards.forEach(card => {
+    if (card.volume != null) volumes.add(card.volume);
+    if (card.book) books.add(card.book);
+    if (card.rarity) rarities.add(card.rarity);
+
+    if (card.gender) {
+      if (Array.isArray(card.gender)) {
+        card.gender.forEach(g => genders.add(g));
+      } else {
+        genders.add(card.gender);
+      }
+    }
+  });
+
+  // Volume
+  [...volumes].sort((a, b) => a - b).forEach(v => {
+    const opt = document.createElement("option");
+    opt.value = String(v);
+    opt.textContent = String(v);
+    filterVolume.appendChild(opt);
+  });
+
+  // Book
+  [...books].sort().forEach(book => {
+    const opt = document.createElement("option");
+    opt.value = book;
+    opt.textContent = book;
+    filterBook.appendChild(opt);
+  });
+
+  // Rarity – fixed canonical order
+  const canonicalRarity = ["Common", "Uncommon", "Rare", "Epic", "Legendary"];
+  canonicalRarity.forEach(rarity => {
+    if (rarities.has(rarity)) {
+      const opt = document.createElement("option");
+      opt.value = rarity;
+      opt.textContent = rarity;
+      filterRarity.appendChild(opt);
+    }
+  });
+
+  // Gender – fixed canonical order, but only if present in data
+  const canonicalGender = ["Male", "Female", "Non-binary", "Inanimate"];
+  canonicalGender.forEach(g => {
+    if (genders.has(g)) {
+      const opt = document.createElement("option");
+      opt.value = g;
+      opt.textContent = g;
+      filterGender.appendChild(opt);
+    }
+  });
+}
+
+function attachEventListeners() {
+  searchInput.addEventListener("input", render);
+  filterVolume.addEventListener("change", render);
+  filterBook.addEventListener("change", render);
+  filterGender.addEventListener("change", render);
+  filterReward.addEventListener("change", render);
+  filterRarity.addEventListener("change", render);
+
+  // Column header sorting
+  const headers = document.querySelectorAll("#cards-table thead th");
+  headers.forEach(th => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.sortKey;
+      if (!key) return;
+
+      if (currentSort.key === key) {
+        currentSort.direction =
+          currentSort.direction === "asc" ? "desc" : "asc";
+      } else {
+        currentSort.key = key;
+        currentSort.direction = "asc";
+      }
+
+      headers.forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+      th.classList.add(
+        currentSort.direction === "asc" ? "sort-asc" : "sort-desc"
+      );
+
+      render();
+    });
+  });
+
+  // Row click → detail view
+  tableBody.addEventListener("click", event => {
+    const row = event.target.closest("tr");
+    if (!row) return;
+
+    const cardId = row.dataset.cardId;
+    if (!cardId) return;
+
+    const card = cards.find(c => c.id === cardId);
+    if (card) {
+      showCardDetails(card);
+    }
+  });
+
+  // Back to top
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      const tableSection = document.getElementById("table-section");
+      const targetY = tableSection ? tableSection.offsetTop : 0;
+
+      window.scrollTo({
+        top: targetY,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!backToTopBtn) return;
+    if (window.scrollY > 200) {
+      backToTopBtn.classList.remove("hidden");
+    } else {
+      backToTopBtn.classList.add("hidden");
+    }
+  });
+
+  // Theme toggle
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const isDarkNow = !document.body.classList.contains("dark");
+      const newTheme = isDarkNow ? "dark" : "light";
+
+      applyTheme(newTheme);
+
+      try {
+        localStorage.setItem("theme", newTheme);
+      } catch (e) {
+        // ignore storage failures
+      }
+    });
+  }
+}
+
+// --- 5. Filtering, sorting, rendering ---
+
+function matchesGender(card, selectedGender) {
+  if (!selectedGender) return true;
+
+  const g = card.gender;
+  if (!g) return false;
+
+  if (Array.isArray(g)) {
+    return g.includes(selectedGender);
+  }
+
+  return g === selectedGender;
+}
+
+function getFilteredCards() {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  const vol = filterVolume.value;
+  const book = filterBook.value;
+  const gender = filterGender.value;
+  const reward = filterReward.value;
+  const rarity = filterRarity.value;
+
+  return cards.filter(card => {
+    if (searchTerm) {
+      const inCardName = card.cardName.toLowerCase().includes(searchTerm);
+      const inCharacter = card.character.toLowerCase().includes(searchTerm);
+      if (!inCardName && !inCharacter) return false;
+    }
+
+    if (vol && String(card.volume) !== vol) return false;
+    if (book && card.book !== book) return false;
+    if (!matchesGender(card, gender)) return false;
+    if (reward && card.reward !== reward) return false;
+    if (rarity && card.rarity !== rarity) return false;
+
+    return true;
+  });
+}
+
+function sortCards(list) {
+  const { key, direction } = currentSort;
+  const factor = direction === "asc" ? 1 : -1;
+
+  const rarityOrder = {
+    Common: 0,
+    Uncommon: 1,
+    Rare: 2,
+    Epic: 3,
+    Legendary: 4
+  };
+
+  function genderRank(card) {
+    const g = card.gender;
+    if (Array.isArray(g)) return 1;       // mixed tags
+    if (g === "Male") return 0;
+    if (g === "Female") return 2;
+    if (g === "Non-binary") return 3;
+    if (g === "Inanimate") return 4;
+    return 99;
+  }
+
+  // Cups before Diamonds; others last
+  const rewardTypeOrder = {
+    Cups: 0,
+    Diamonds: 1
+  };
+
+  // Map rewards into a common "tier" space: 2,4,8,12 for both cups/diamonds
+  function rewardTier(card) {
+    const amount = card.rewardAmount ?? 0;
+    if (!card.reward) return 9999;
+    if (card.reward === "Cups") return amount;            // 2,4,8,12
+    if (card.reward === "Diamonds") return amount / 10;  // 20→2, 40→4...
+    return 9999;
+  }
+
+  // For descending reward sort: diamonds dominate and higher amounts first
+  function rewardDescScore(card) {
+    const amt = card.rewardAmount ?? 0;
+    if (card.reward === "Diamonds") return amt * 2; // always above cups
+    if (card.reward === "Cups") return amt;         // 12 > 8 > 4 > 2
+    return -1;
+  }
+
+  return [...list].sort((a, b) => {
+    // --- Special: rarity ---
+    if (key === "rarity") {
+      const ra = rarityOrder[a.rarity] ?? 999;
+      const rb = rarityOrder[b.rarity] ?? 999;
+
+      // 1) rarity rank, honouring asc/desc
+      if (ra !== rb) return (ra - rb) * factor;
+
+      // 2) reward tier: asc or desc depending on direction
+      const ta = rewardTier(a);
+      const tb = rewardTier(b);
+
+      if (ta !== tb) {
+        if (direction === "asc") {
+          return ta - tb;
+        } else {
+          return tb - ta; // reverse tier only
+        }
+      }
+
+      // 3) volume: always ascending
+      const va = a.volume ?? 9999;
+      const vb = b.volume ?? 9999;
+      if (va !== vb) return va - vb;
+
+      // 4) reward type: cups before diamonds
+      const rta = rewardTypeOrder[a.reward] ?? 999;
+      const rtb = rewardTypeOrder[b.reward] ?? 999;
+      if (rta !== rtb) return rta - rtb;
+
+      // 5) fallback: original index
+      return a._index - b._index;
+    }
+
+    // --- Special: gender ---
+    if (key === "gender") {
+      const ga = genderRank(a);
+      const gb = genderRank(b);
+
+      if (ga !== gb) return (ga - gb) * factor;
+      return a._index - b._index;
+    }
+
+    // --- Special: reward (type/amount/volume) ---
+    if (key === "reward") {
+      if (direction === "asc") {
+        // Ascending:
+        // 1) Cups before Diamonds
+        // 2) Amount ascending
+        // 3) Volume ascending
+        const ta = rewardTypeOrder[a.reward] ?? 999;
+        const tb = rewardTypeOrder[b.reward] ?? 999;
+        if (ta !== tb) return ta - tb;
+
+        const aa = a.rewardAmount ?? 0;
+        const ab = b.rewardAmount ?? 0;
+        if (aa !== ab) return aa - ab;
+
+        const va = a.volume ?? 9999;
+        const vb = b.volume ?? 9999;
+        if (va !== vb) return va - vb;
+
+        return a._index - b._index;
+      } else {
+        // Descending:
+        // 1) score so Diamonds outrank Cups, bigger first:
+        //    120d, 80d, 40d, 20d, 12c, 8c, 4c, 2c
+        // 2) volume ascending within same amount
+        const sa = rewardDescScore(a);
+        const sb = rewardDescScore(b);
+        if (sa !== sb) return sb - sa; // bigger score first
+
+        const va = a.volume ?? 9999;
+        const vb = b.volume ?? 9999;
+        if (va !== vb) return va - vb;
+
+        return a._index - b._index;
+      }
+    }
+
+    // --- Default behaviour for everything else ---
+    let va = a[key];
+    let vb = b[key];
+
+    if (Array.isArray(va)) va = va[0];
+    if (Array.isArray(vb)) vb = vb[0];
+
+    if (typeof va === "string") va = va.toLowerCase();
+    if (typeof vb === "string") vb = vb.toLowerCase();
+
+    if (va < vb) return -1 * factor;
+    if (va > vb) return 1 * factor;
+
+    return a._index - b._index;
+  });
+}
+
+function render() {
+  const filtered = getFilteredCards();
+  const sorted = sortCards(filtered);
+
+  tableBody.innerHTML = "";
+
+  sorted.forEach(card => {
+    const tr = document.createElement("tr");
+    tr.dataset.cardId = card.id;
+
+    const rewardDisplay =
+      card.reward && card.rewardAmount != null
+        ? `${card.rewardAmount} ${card.reward.toLowerCase()}`
+        : (card.reward ? card.reward.toLowerCase() : "");
+
+    const thumbHtml = card.image
+      ? `<img src="${card.image}"
+               alt="${card.character ?? ""}"
+               class="thumb-image">`
+      : "";
+
+    tr.innerHTML = `
+      <td class="thumb-cell">${thumbHtml}</td>
+      <td>${card.cardName ?? ""}</td>
+      <td>${card.character ?? ""}</td>
+      <td>${card.volume ?? ""}</td>
+      <td>${card.rarity ?? ""}</td>
+      <td>${rewardDisplay}</td>
+    `;
+
+    tableBody.appendChild(tr);
+  });
+
+  resultsCount.textContent =
+    `${sorted.length} card${sorted.length === 1 ? "" : "s"} shown`;
+}
+
+function showCardDetails(card) {
+  const placeholder = document.getElementById("detail-placeholder");
+  const content = document.getElementById("detail-content");
+
+  const imageWrapper = document.getElementById("detail-image-wrapper");
+  const imageEl = document.getElementById("detail-image");
+  const titleEl = document.getElementById("detail-title");
+  const charEl = document.getElementById("detail-character");
+  const cardNameEl = document.getElementById("detail-cardName");
+  const volumeEl = document.getElementById("detail-volume");
+  const bookEl = document.getElementById("detail-book");
+  const genderEl = document.getElementById("detail-gender");
+  const rewardEl = document.getElementById("detail-reward");
+  const rarityEl = document.getElementById("detail-rarity");
+  const messageEl = document.getElementById("detail-message");
+
+  if (placeholder) placeholder.classList.add("hidden");
+  if (content) content.classList.remove("hidden");
+
+  if (card.image && imageWrapper && imageEl) {
+    imageWrapper.classList.remove("hidden");
+    imageEl.src = card.image;
+    imageEl.alt = `${card.character ?? ""} – ${card.cardName ?? ""}`;
+  } else if (imageWrapper && imageEl) {
+    imageWrapper.classList.add("hidden");
+    imageEl.removeAttribute("src");
+    imageEl.alt = "";
+  }
+
+  titleEl.textContent = `${card.character ?? ""} – ${card.cardName ?? ""}`;
+  charEl.textContent = card.character ?? "";
+  cardNameEl.textContent = card.cardName ?? "";
+  volumeEl.textContent = card.volume ?? "";
+  bookEl.textContent = card.book ?? "";
+
+  const genderDisplay = Array.isArray(card.gender)
+    ? card.gender.join(", ")
+    : (card.gender ?? "");
+  genderEl.textContent = genderDisplay;
+
+  if (card.reward && card.rewardAmount != null) {
+    rewardEl.textContent =
+      `${card.rewardAmount} ${card.reward.toLowerCase()}`;
+  } else {
+    rewardEl.textContent = card.reward ? card.reward.toLowerCase() : "";
+  }
+
+  rarityEl.textContent = card.rarity ?? "";
+  messageEl.textContent = card.message ?? "";
+}
+
+// --- 6. Kick off ---
+
+init();
