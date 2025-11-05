@@ -40,7 +40,7 @@
   },
 {
     "id": "ivovol1",
-    "character": "Ivo",
+    "character": "Ivo Martin",
     "cardName": "Noir",
     "volume": 1,
     "book": "Psi",
@@ -79,7 +79,7 @@
   },
 {
     "id": "lucienvol1",
-    "character": "Lucien",
+    "character": "Lucien Lanceret",
     "cardName": "Bottoms Up!",
     "volume": 1,
     "book": "W: Time Catcher",
@@ -92,7 +92,7 @@
   },
 {
     "id": "zainvol1",
-    "character": "Zain",
+    "character": "Zain Al-Abbas",
     "cardName": "Good Morning",
     "volume": 1,
     "book": "The Desert Rose",
@@ -119,7 +119,7 @@
   },
 {
     "id": "hodgevol1",
-    "character": "Hodge",
+    "character": "Hodge Baker",
     "cardName": "Dangerous Games",
     "volume": 1,
     "book": "On Thin Ice",
@@ -132,7 +132,7 @@
   },
  {
     "id": "limavol2",
-    "character": "Lima",
+    "character": "Lima Berg",
     "cardName": "On the Trail",
     "volume": 2,
     "book": "Kali: Call of Darkness",
@@ -145,7 +145,7 @@
   },
  {
     "id": "killianvol2",
-    "character": "Killian",
+    "character": "Killian Lightwood",
     "cardName": "Wanted",
     "volume": 2,
     "book": "Kali: Call of Darkness",
@@ -158,7 +158,7 @@
   },
  {
     "id": "shaarnezvol2",
-    "character": "Shaarnez",
+    "character": "Sha'arnez",
     "cardName": "Secret Passion",
     "volume": 2,
     "book": "The Thunderstorms Saga",
@@ -184,7 +184,7 @@
   },
  {
     "id": "johnvol2",
-    "character": "John",
+    "character": "John Roberts",
     "cardName": "Shards of Memories",
     "volume": 2,
     "book": "Theodora",
@@ -209,7 +209,72 @@
     "message": "Are you ready to forget reality and dive into sin?",
     "image": "images/mimivol2.png"
   },
-  {
+{
+    "id": "dmitryannavol3",
+    "character": "Anna and Dmitry",
+    "cardName": "Gift With a Surprise",
+    "volume": 3,
+    "book": "Heaven's Secret: Requiem",
+    "gender": ["Male", "Female"],
+    "reward": "Diamonds",
+    "rarity": "Epic",
+    "rewardAmount": 120,
+    "message": "The best gifts are the ones that make memories!",
+    "image": "images/dmitryannavol3.png"
+  },
+{
+    "id": "waltervol3",
+    "character": "Walter Finn",
+    "cardName": "A Star for You",
+    "volume": 3,
+    "book": "Soulless",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Rare",
+    "rewardAmount": 8,
+    "message": "A precious gift for the precious light you bring to my days.",
+    "image": "images/waltervol.png"
+  },
+{
+    "id": "murphyvol3",
+    "character": "Murphy",
+    "cardName": "Santa From Hell",
+    "volume": 3,
+    "book": "Rage of the Titans",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "I'm the one responsible for your holiday sins.",
+    "image": "images/murphyvol3.png"
+  },
+{
+    "id": "reinholdvol3",
+    "character": "Reinhold Piel",
+    "cardName": "Ducks!",
+    "volume": 3,
+    "book": "Heart of Trespia",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "Why'd it have to be ducks?",
+    "image": "images/reinholdvol3.png"
+  },
+{
+    "id": "doranvol3",
+    "character": "Doran Basu",
+    "cardName": "Bengali Lumberjack",
+    "volume": 3,
+    "book": "Kali: Flame of Samsara",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "No one can resist Doran Basu's blade. Not even you!",
+    "image": "images/doranvol3.png"
+  },
+{
     "id": "onyxvol3",
     "character": "Onyx",
     "cardName": "Holiday For Two",
@@ -219,8 +284,74 @@
     "reward": "Cups",
     "rarity": "Common",
     "rewardAmount": 2,
-    "message": "Placeholder",
-    "image": ""
+    "message": "It doesn't matter how you decorate the tree, what matters is the holiday spirit in your heart.",
+    "image": "images/onyxvol3.png"
+  },
+{
+    "id": "cassielvol3",
+    "character": "Cassiel",
+    "cardName": "Wishes Come True!",
+    "volume": 3,
+    "book": "Astrea's Broken Heart",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "May all your dreams come true tonight.",
+    "image": "images/cassielvol3.png"
+  },
+{
+    "id": "maryvol3",
+    "character": "Mary Brown",
+    "cardName": "Christmas Judgement",
+    "volume": 3,
+    "book": "Arcanum",
+    "gender": "Female",
+    "reward": "Cups",
+    "rarity": "Rare",
+    "rewardAmount": 8,
+    "message": "Gifts are for the nice, and wolves' teeth are for the naughty.",
+    "image": "images/maryvol3.png"
+  },
+{
+    "id": "noahvol3",
+    "character": "Noah",
+    "cardName": "The Chef",
+    "volume": 3,
+    "book": "Heaven's Secret: Requiem",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "The unsung hero of every great feast.",
+    "image": "images/noahvol3.png"
+  },
+{
+    "id": "hobellovol3",
+    "character": "Hobello",
+    "cardName": "Toady Miracle",
+    "volume": 3,
+    "book": "Shakespeare's Code",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "Call for toads when there aren't enough elves!",
+    "image": "images/hobellovol3.png"
+  },
+
+  {
+    "id": "maxfallvol3",
+    "character": "Max Fall",
+    "cardName": "Family Feast",
+    "volume": 3,
+    "book": "Moonborn",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "Together for every Christmas and the rest of our lives.",
+    "image": "images/maxfallvol3.png"
   },
   {
     "id": "malekvol4",
