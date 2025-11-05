@@ -121,6 +121,43 @@ h1 {
   color: #111827;
 }
 
+/* ----- Table alignment tweaks (desktop default) ----- */
+
+/* centre "Art" header only, leave thumbnails themselves as-is */
+#cards-table th:first-child {
+  text-align: center;
+}
+
+/* make character, volume, rarity, reward centred by default */
+#cards-table th:nth-child(3),
+#cards-table td:nth-child(3),
+#cards-table th:nth-child(4),
+#cards-table td:nth-child(4),
+#cards-table th:nth-child(5),
+#cards-table td:nth-child(5),
+#cards-table th:nth-child(6),
+#cards-table td:nth-child(6) {
+  text-align: center;
+}
+
+/* help columns share space more evenly without touching padding */
+#cards-table {
+  table-layout: fixed;
+}
+
+/* keep the art column narrow so text columns share the rest */
+#cards-table th:nth-child(1),
+#cards-table td:nth-child(1) {
+  width: 70px; /* matches your .thumb-cell width */
+}
+
+/* give Card name a predictable slice; others share remaining */
+#cards-table th.col-cardName,
+#cards-table td.col-cardName {
+  width: 30%;
+}
+
+
 #cards-table th,
 #cards-table td {
   padding: 0.3rem 0.4rem;
@@ -309,6 +346,25 @@ h1 {
   #cards-table td.col-cardName {
     display: none;
   }
+
+  /* mobile column alignment */
+
+  /* Character column (still 3rd in the DOM): left-aligned */
+  #cards-table th:nth-child(3),
+  #cards-table td:nth-child(3) {
+    text-align: left;
+  }
+
+  /* Volume, Rarity, Reward centred on mobile */
+  #cards-table th:nth-child(4),
+  #cards-table td:nth-child(4),
+  #cards-table th:nth-child(5),
+  #cards-table td:nth-child(5),
+  #cards-table th:nth-child(6),
+  #cards-table td:nth-child(6) {
+    text-align: center;
+  }
+
 }
 
 @media (max-width: 600px) {
