@@ -349,14 +349,9 @@ h1 {
 
   /* mobile column alignment */
 
-  /* Character column (still 3rd in the DOM): left-aligned */
-  #cards-table th:nth-child(3),
-  #cards-table td:nth-child(3) {
-    text-align: left;
-  }
-
   /* Volume, Rarity, Reward centred on mobile */
-  #cards-table th:nth-child(1),
+  #cards-table th:nth-child(3),
+  #cards-table td:nth-child(3)
   #cards-table th:nth-child(4),
   #cards-table td:nth-child(4),
   #cards-table th:nth-child(5),
