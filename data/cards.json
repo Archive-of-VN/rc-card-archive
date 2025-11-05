@@ -215,7 +215,7 @@
     "cardName": "Gift With a Surprise",
     "volume": 3,
     "book": "Heaven's Secret: Requiem",
-    "gender": ["Male", "Female"],
+    "gender": ["Female", "Male"],
     "reward": "Diamonds",
     "rarity": "Epic",
     "rewardAmount": 120,
