@@ -130,6 +130,71 @@
     "message": "Enemies are all around, but you are the reason my heart beats.",
     "image": "images/hodgevol1.png"
   },
+ {
+    "id": "limavol2",
+    "character": "Lima",
+    "cardName": "On the Trail",
+    "volume": 2,
+    "book": "Kali: Call of Darkness",
+    "gender": "Female",
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "Together, we'll uncover the truth.",
+    "image": "limavol2"
+  },
+ {
+    "id": "killianvol2",
+    "character": "Killian",
+    "cardName": "Wanted",
+    "volume": 2,
+    "book": "Kali: Call of Darkness",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Unommon",
+    "rewardAmount": 4,
+    "message": "Rules are made to be broken.",
+    "image": "killianvol2"
+  },
+ {
+    "id": "shaarnezvol2",
+    "character": "Shaarnez",
+    "cardName": "Secret Passion",
+    "volume": 2,
+    "book": "The Thunderstorms Saga",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "You're bittersweet like wild honey.",
+    "image": "shaarnezvol2"
+  },
+ {
+    "id": "cainvol2",
+    "character": "Cain",
+    "cardName": "Angel of Death",
+    "volume": 2,
+    "book": "Heaven's Secret: Requiem",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Rare",
+    "rewardAmount": 8,
+    "message": "There are no winners in a dispute between loved ones.",
+    "image": "cainvol2"
+  },
+ {
+    "id": "johnvol2",
+    "character": "John",
+    "cardName": "Shards of Memories",
+    "volume": 2,
+    "book": "Theodora",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "I'm willing to wait for you for an eternity.",
+    "image": "johnvol2"
+  },
 
   {
     "id": "mimivol2",
@@ -141,8 +206,8 @@
     "reward": "Cups",
     "rarity": "Common",
     "rewardAmount": 2,
-    "message": "Placeholder",
-    "image": ""
+    "message": "Are you ready to forget reality and dive into sin?",
+    "image": "mimivol2"
   },
   {
     "id": "onyxvol3",
