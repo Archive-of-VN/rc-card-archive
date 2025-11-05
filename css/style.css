@@ -303,6 +303,12 @@ h1 {
   #cards-table td {
     font-size: 0.75rem;
   }
+
+ /* Hide Card name column on very small screens */
+  #cards-table th.col-cardName,
+  #cards-table td.col-cardName {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {

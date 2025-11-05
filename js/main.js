@@ -448,7 +448,7 @@ function render() {
 
     tr.innerHTML = `
       <td class="thumb-cell">${thumbHtml}</td>
-      <td>${card.cardName ?? ""}</td>
+      <td class="col-cardName">${card.cardName ?? ""}</td>
       <td>${card.character ?? ""}</td>
       <td>${card.volume ?? ""}</td>
       <td>${card.rarity ?? ""}</td>
