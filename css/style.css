@@ -398,47 +398,46 @@ body.dark #clear-sorting:hover {
 /* ---------- Rarity colour coding ---------- */
 
 .rarity-common {
-  color: #b45309;      /* bronze-ish */
+  color: #8b5a2b;  /* warm brownish bronze */
 }
 
 .rarity-uncommon {
-  color: #6b7280;      /* neutral silver/steel */
+  color: #5b6470;  /* cooler grey-slate */
 }
 
 .rarity-rare {
-  color: #b7791f;      /* warm gold */
+  color: #b7791f;  /*current warm gold */
 }
 
 .rarity-epic {
-  color: #2563eb;      /* light-ish blue */
+  color: #2563eb;  /* same blue */
 }
 
 .rarity-legendary {
-  color: #7c3aed;      /* purple accent (just in case) */
+  color: #7c3aed;  /* same purple */
 }
 
 /* Dark mode tweaks: a bit brighter against dark bg */
 
 body.dark .rarity-common {
-  color: #fbbf24;
+  color: #d8a657;  /* muted warm gold-brown */
 }
 
 body.dark .rarity-uncommon {
-  color: #e5e7eb;
+  color: #aeb4bd;  /* lighter neutral grey for contrast */
 }
 
 body.dark .rarity-rare {
-  color: #facc15;
+  color: #facc15;  /* keep the bright gold */
 }
 
 body.dark .rarity-epic {
-  color: #60a5fa;
+  color: #60a5fa;  /* same light blue */
 }
 
 body.dark .rarity-legendary {
-  color: #c4b5fd;
+  color: #c4b5fd;  /* same lilac tone */
 }
-
 
 /* ---------- Back to top button ---------- */
 
