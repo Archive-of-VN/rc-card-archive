@@ -111,8 +111,11 @@ h1 {
 
 #table-section {
   overflow-x: auto;
+  max-width: 1100px;      /* limits sprawl on large screens */
+  margin: 0 auto;         /* centre the whole table section */
 }
 
+/* table itself: same density, but with soft elevation + rounded corners */
 #cards-table {
   width: 100%;
   border-collapse: collapse;
@@ -120,6 +123,9 @@ h1 {
   background: white;
   color: #111827;
   table-layout: fixed; /* let columns share space more evenly */
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  overflow: hidden;       /* keep rounded corners on header/first row */
 }
 
 #cards-table th,
@@ -127,6 +133,13 @@ h1 {
   padding: 0.3rem 0.4rem;
   border-bottom: 1px solid #f1f5f9;
   font-size: 0.8rem;
+}
+
+/* keep header visible while scrolling */
+#cards-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 /* Art header centred, others default to left unless overridden below */
@@ -341,6 +354,51 @@ h1 {
   font-size: 0.85rem;
 }
 
+/* ---------- Rarity colour coding ---------- */
+
+.rarity-common {
+  color: #b45309;      /* bronze-ish */
+}
+
+.rarity-uncommon {
+  color: #6b7280;      /* neutral silver/steel */
+}
+
+.rarity-rare {
+  color: #b7791f;      /* warm gold */
+}
+
+.rarity-epic {
+  color: #2563eb;      /* light-ish blue */
+}
+
+.rarity-legendary {
+  color: #7c3aed;      /* purple accent (just in case) */
+}
+
+/* Dark mode tweaks: a bit brighter against dark bg */
+
+body.dark .rarity-common {
+  color: #fbbf24;
+}
+
+body.dark .rarity-uncommon {
+  color: #e5e7eb;
+}
+
+body.dark .rarity-rare {
+  color: #facc15;
+}
+
+body.dark .rarity-epic {
+  color: #60a5fa;
+}
+
+body.dark .rarity-legendary {
+  color: #c4b5fd;
+}
+
+
 /* ---------- Back to top button ---------- */
 
 .back-to-top {
@@ -455,6 +513,7 @@ body.dark #search-input::placeholder {
 body.dark #cards-table {
   background-color: #0f172a;
   color: #e5e7eb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
 }
 
 body.dark #cards-table th {

@@ -510,12 +510,17 @@ function render() {
                class="thumb-image">`
       : "";
 
+  const rarityClass = card.rarity
+    ? `rarity-${card.rarity.toLowerCase().replace(/\s+/g, "-")}`
+    : "";
+
+
     tr.innerHTML = `
       <td class="thumb-cell">${thumbHtml}</td>
       <td class="col-cardName">${card.cardName ?? ""}</td>
       <td>${card.character ?? ""}</td>
       <td>${card.volume ?? ""}</td>
-      <td>${card.rarity ?? ""}</td>
+      <td class="${rarityClass}">${card.rarity ?? ""}</td>
       <td>${rewardDisplay}</td>
     `;
 
@@ -592,7 +597,22 @@ const bookDisplay = Array.isArray(card.book)
 
   rewardEl.textContent = formatRewardShort(card);
 
-  rarityEl.textContent = card.rarity ?? "";
+    rarityEl.textContent = card.rarity ?? "";
+
+  // reset old rarity classes
+  rarityEl.classList.remove(
+    "rarity-common",
+    "rarity-uncommon",
+    "rarity-rare",
+    "rarity-epic",
+    "rarity-legendary"
+  );
+
+  if (card.rarity) {
+    const rarityClass = `rarity-${card.rarity.toLowerCase().replace(/\s+/g, "-")}`;
+    rarityEl.classList.add(rarityClass);
+  }
+
   messageEl.textContent = card.message ?? "";
 
   // --- mobile overlay version ---
