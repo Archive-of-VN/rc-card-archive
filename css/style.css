@@ -90,6 +90,35 @@ h1 {
   opacity: 1;
 }
 
+#clear-filters,
+#clear-sorting {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+#clear-filters:hover,
+#clear-sorting:hover {
+  background: #e5e7eb;
+}
+
+body.dark #clear-filters,
+body.dark #clear-sorting {
+  background: #1e293b;
+  border-color: #475569;
+  color: #e5e7eb;
+}
+
+body.dark #clear-filters:hover,
+body.dark #clear-sorting:hover {
+  background: #334155;
+}
+
+
 /* ---------- Main layout: table + detail ---------- */
 
 #main-layout {
@@ -201,11 +230,10 @@ h1 {
 }
 
 /* Shrink Card name column a bit so the gap isn’t huge */
-#cards-table th.col-cardName,
-#cards-table td.col-cardName {
-  width: 24%;
+#cards-table td.col-cardName,
+#cards-table td:nth-child(3) {
+  padding-left: 0.2rem;
 }
-
 
 #cards-table th,
 #cards-table td {
@@ -252,8 +280,14 @@ h1 {
 /* Thumbnail column */
 
 .thumb-cell {
-  width: 70px;
-  padding-right: 0.3rem;
+  width: 60px;
+  padding-right: 0.2rem;
+}
+
+/* Keep table column width in sync */
+#cards-table th:nth-child(1),
+#cards-table td:nth-child(1) {
+  width: 60px;
 }
 
 .thumb-image {

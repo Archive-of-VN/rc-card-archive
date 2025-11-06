@@ -224,6 +224,35 @@ function attachEventListeners() {
         behavior: "smooth"
       });
     });
+
+//clear filters and sorting
+  
+  const clearFiltersBtn = document.getElementById("clear-filters");
+  const clearSortingBtn = document.getElementById("clear-sorting");
+
+  if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      filterVolume.value = "";
+      filterBook.value = "";
+      filterGender.value = "";
+      filterReward.value = "";
+      filterRarity.value = "";
+      render();
+    });
+  }
+
+  if (clearSortingBtn) {
+    clearSortingBtn.addEventListener("click", () => {
+      currentSort = { key: "volume", direction: "asc" };
+
+      const headers = document.querySelectorAll("#cards-table thead th");
+      headers.forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+
+      render();
+    });
+  }
+
   }
 
   window.addEventListener("scroll", () => {
