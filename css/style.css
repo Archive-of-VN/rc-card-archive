@@ -324,6 +324,12 @@ h1 {
   margin: 0;
 }
 
+/* Allow multi-line book display in details (desktop + mobile) */
+#detail-book,
+#mobile-detail-book {
+  white-space: pre-line;
+}
+
 /* Detail message */
 
 .detail-message {

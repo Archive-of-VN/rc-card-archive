@@ -303,7 +303,7 @@ function matchesGender(card, selectedGender) {
   return g === selectedGender;
 }
 
-// NEW: book matching that supports string or array
+// book matching that supports string or array
 function matchesBook(card, selectedBook) {
   if (!selectedBook) return true; // no filter selected
 
@@ -563,10 +563,10 @@ function showCardDetails(card) {
   if (placeholder) placeholder.classList.add("hidden");
   if (content) content.classList.remove("hidden");
 
-  // Book display (single or multiple)
-  const bookDisplay = Array.isArray(card.book)
-    ? card.book.join(", ")
-    : (card.book ?? "");
+  // Book display (single or multiple) – line breaks between stories
+const bookDisplay = Array.isArray(card.book)
+  ? card.book.join("\n")     // each story on its own line
+  : (card.book ?? "");
 
   // --- desktop / regular detail panel ---
   if (card.image && imageWrapper && imageEl) {
