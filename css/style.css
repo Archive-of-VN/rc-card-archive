@@ -115,14 +115,6 @@ h1 {
   margin: 0 auto;         /* centre the whole table section */
 }
 
-/* On desktop, make the table area scroll vertically so sticky header
-   is reliable across browsers (page itself still scrolls normally above/below) */
-@media (min-width: 900px) {
-  #table-section {
-    max-height: 70vh;     /* adjust if you want more/less table visible */
-    overflow-y: auto;
-  }
-}
 
 
 /* table itself: same density, but with soft elevation + rounded corners */
@@ -135,7 +127,6 @@ h1 {
   color: #111827;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-  overflow: hidden;       /* keep rounded corners on header/first row */
 }
 
 #cards-table th,
