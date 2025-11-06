@@ -101,7 +101,18 @@ function populateFilterOptions() {
 
   cards.forEach(card => {
     if (card.volume != null) volumes.add(card.volume);
-    if (card.book) books.add(card.book);
+
+    // BOOKS: support single string or array of strings
+    if (card.book) {
+      if (Array.isArray(card.book)) {
+        card.book.forEach(b => {
+          if (b) books.add(b);
+        });
+      } else {
+        books.add(card.book);
+      }
+    }
+
     if (card.rarity) rarities.add(card.rarity);
 
     if (card.gender) {
@@ -121,7 +132,7 @@ function populateFilterOptions() {
     filterVolume.appendChild(opt);
   });
 
-  // Book
+  // Book (each title once, even if used in arrays)
   [...books].sort().forEach(book => {
     const opt = document.createElement("option");
     opt.value = book;
@@ -186,21 +197,21 @@ function attachEventListeners() {
 
   // Row click → detail view
   tableBody.addEventListener("click", (event) => {
-  const row = event.target.closest("tr");
-  if (!row) return;
+    const row = event.target.closest("tr");
+    if (!row) return;
 
-  const cardId = row.dataset.cardId;
-  if (!cardId) return;
+    const cardId = row.dataset.cardId;
+    if (!cardId) return;
 
-  const card = cards.find(c => c.id === cardId);
-  if (!card) return;
+    const card = cards.find(c => c.id === cardId);
+    if (!card) return;
 
-  // Set currentIndex within the current filtered + sorted list
-  const idx = currentList.findIndex(c => c.id === cardId);
-  currentIndex = idx;
+    // Set currentIndex within the current filtered + sorted list
+    const idx = currentList.findIndex(c => c.id === cardId);
+    currentIndex = idx;
 
-  showCardDetails(card);
-});
+    showCardDetails(card);
+  });
 
   // Back to top
   if (backToTopBtn) {
@@ -292,6 +303,20 @@ function matchesGender(card, selectedGender) {
   return g === selectedGender;
 }
 
+// NEW: book matching that supports string or array
+function matchesBook(card, selectedBook) {
+  if (!selectedBook) return true; // no filter selected
+
+  const b = card.book;
+  if (!b) return false;
+
+  if (Array.isArray(b)) {
+    return b.includes(selectedBook);
+  }
+
+  return b === selectedBook;
+}
+
 function getFilteredCards() {
   const searchTerm = searchInput.value.trim().toLowerCase();
   const vol = filterVolume.value;
@@ -308,7 +333,10 @@ function getFilteredCards() {
     }
 
     if (vol && String(card.volume) !== vol) return false;
-    if (book && card.book !== book) return false;
+
+    // BOOK filter via helper (handles arrays)
+    if (!matchesBook(card, book)) return false;
+
     if (!matchesGender(card, gender)) return false;
     if (reward && card.reward !== reward) return false;
     if (rarity && card.rarity !== rarity) return false;
@@ -447,6 +475,7 @@ function sortCards(list) {
     let va = a[key];
     let vb = b[key];
 
+    // If a field is an array (e.g. gender or book tags), sort by the first item
     if (Array.isArray(va)) va = va[0];
     if (Array.isArray(vb)) vb = vb[0];
 
@@ -534,6 +563,11 @@ function showCardDetails(card) {
   if (placeholder) placeholder.classList.add("hidden");
   if (content) content.classList.remove("hidden");
 
+  // Book display (single or multiple)
+  const bookDisplay = Array.isArray(card.book)
+    ? card.book.join(", ")
+    : (card.book ?? "");
+
   // --- desktop / regular detail panel ---
   if (card.image && imageWrapper && imageEl) {
     imageWrapper.classList.remove("hidden");
@@ -549,7 +583,7 @@ function showCardDetails(card) {
   charEl.textContent = card.character ?? "";
   cardNameEl.textContent = card.cardName ?? "";
   volumeEl.textContent = card.volume ?? "";
-  bookEl.textContent = card.book ?? "";
+  bookEl.textContent = bookDisplay;
 
   const genderDisplay = Array.isArray(card.gender)
     ? card.gender.join(", ")
@@ -595,15 +629,15 @@ function showCardDetails(card) {
     if (mCharEl) mCharEl.textContent = card.character ?? "";
     if (mCardNameEl) mCardNameEl.textContent = card.cardName ?? "";
     if (mVolumeEl) mVolumeEl.textContent = card.volume ?? "";
-    if (mBookEl) mBookEl.textContent = card.book ?? "";
+    if (mBookEl) mBookEl.textContent = bookDisplay;
     if (mGenderEl) mGenderEl.textContent = genderDisplay;
     if (mRewardEl) {
-    mRewardEl.textContent = formatRewardShort(card);
-  }
+      mRewardEl.textContent = formatRewardShort(card);
+    }
     if (mRarityEl) mRarityEl.textContent = card.rarity ?? "";
     if (mMessageEl) mMessageEl.textContent = card.message ?? "";
 
-       // Show/hide prev/next arrows based on currentIndex
+    // Show/hide prev/next arrows based on currentIndex
     const mPrevBtn = document.getElementById("mobile-detail-prev");
     const mNextBtn = document.getElementById("mobile-detail-next");
 
@@ -627,7 +661,6 @@ function showCardDetails(card) {
     mobileOverlay.classList.remove("hidden");
     mobileOverlay.classList.add("open");
     mobileOverlay.scrollTop = 0;
-
   }
 }
 
