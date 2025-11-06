@@ -109,10 +109,21 @@ h1 {
 
 /* ---------- Table ---------- */
 
+
 #table-section {
   max-width: 1100px;      /* limits sprawl on large screens */
   margin: 0 auto;         /* centre the whole table section */
 }
+
+/* On desktop, make the table area scroll vertically so sticky header
+   is reliable across browsers (page itself still scrolls normally above/below) */
+@media (min-width: 900px) {
+  #table-section {
+    max-height: 70vh;     /* adjust if you want more/less table visible */
+    overflow-y: auto;
+  }
+}
+
 
 /* table itself: same density, but with soft elevation + rounded corners */
 #cards-table {
@@ -454,7 +465,7 @@ body.dark .rarity-legendary {
 
   /* Volume, Rarity, Reward centred on mobile */
   #cards-table th:nth-child(3),
-  #cards-table td:nth-child(3)
+  #cards-table td:nth-child(3),
   #cards-table th:nth-child(4),
   #cards-table td:nth-child(4),
   #cards-table th:nth-child(5),
