@@ -640,7 +640,7 @@
     "rewardAmount": 20,
     "message": "Looks like we'll need a lot of coffee tonight.",
     "image": "images/agentwolfdoe.png"
-  }
+  },
 {
     "id": "donovanvol6",
     "character": "Donovan",
@@ -850,5 +850,4 @@
     "message": "Smile, Shepha, for God's sake!",
     "image": "images/plaguevol7.png"
   }
-
 ]
