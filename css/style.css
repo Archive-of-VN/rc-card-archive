@@ -110,7 +110,6 @@ h1 {
 /* ---------- Table ---------- */
 
 #table-section {
-  overflow-x: auto;
   max-width: 1100px;      /* limits sprawl on large screens */
   margin: 0 auto;         /* centre the whole table section */
 }
@@ -118,11 +117,11 @@ h1 {
 /* table itself: same density, but with soft elevation + rounded corners */
 #cards-table {
   width: 100%;
+  table-layout: fixed; /* let columns share space more evenly */
   border-collapse: collapse;
   margin-top: 1rem;
   background: white;
   color: #111827;
-  table-layout: fixed; /* let columns share space more evenly */
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
   overflow: hidden;       /* keep rounded corners on header/first row */
@@ -135,11 +134,17 @@ h1 {
   font-size: 0.8rem;
 }
 
-/* keep header visible while scrolling */
-#cards-table thead th {
+/* Sticky header: stays at top while page scrolls */
+#cards-table thead {
   position: sticky;
   top: 0;
   z-index: 5;
+}
+
+#cards-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 6;  /* a hair above the row cells */
 }
 
 /* Art header centred, others default to left unless overridden below */
