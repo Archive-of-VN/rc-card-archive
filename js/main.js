@@ -532,10 +532,13 @@ function render() {
     const rewardDisplay = formatRewardShort(card);
 
     const thumbHtml = card.image
-      ? `<img src="${card.image}"
-               alt="${card.character ?? ""}"
-               class="thumb-image">`
-      : "";
+  ? `<img src="${card.image}"
+           alt="${card.character ?? ""}"
+           class="thumb-image"
+           loading="lazy"
+           decoding="async">`
+  : "";
+
 
   const rarityClass = card.rarity
     ? `rarity-${card.rarity.toLowerCase().replace(/\s+/g, "-")}`
