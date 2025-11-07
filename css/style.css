@@ -4,10 +4,6 @@
 
 /* ---------- Base layout ---------- */
 
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -488,6 +484,11 @@ body.dark .rarity-legendary {
   #controls {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+ html, body {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   #cards-table th,
