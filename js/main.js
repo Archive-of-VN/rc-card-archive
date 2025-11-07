@@ -235,25 +235,32 @@ function attachEventListeners() {
     }
   });
 
-  // Mobile detail overlay close handlers
+  // Detail overlay
   const mobileOverlay = document.getElementById("mobile-detail-overlay");
   const mobileClose = document.getElementById("mobile-detail-close");
 
-  if (mobileOverlay && mobileClose) {
-    mobileClose.addEventListener("click", () => {
+  if (mobileOverlay) {
+    function closeOverlay() {
       mobileOverlay.classList.remove("open");
       mobileOverlay.classList.add("hidden");
-    });
+      document.body.classList.remove("overlay-open");
+    }
+
+    if (mobileClose) {
+      mobileClose.addEventListener("click", () => {
+        closeOverlay();
+      });
+    }
 
     mobileOverlay.addEventListener("click", (event) => {
+      // click on the dark backdrop closes; clicks inside the inner card do not
       if (event.target === mobileOverlay) {
-        mobileOverlay.classList.remove("open");
-        mobileOverlay.classList.add("hidden");
+        closeOverlay();
       }
     });
   }
 
-  // Mobile navigation arrows (now used on all viewports)
+  // Navigation arrows (used on all viewports)
   const mobilePrev = document.getElementById("mobile-detail-prev");
   const mobileNext = document.getElementById("mobile-detail-next");
 
@@ -711,6 +718,9 @@ function showCardDetails(card) {
   mobileOverlay.classList.remove("hidden");
   mobileOverlay.classList.add("open");
   mobileOverlay.scrollTop = 0;
+
+  // lock background scroll
+  document.body.classList.add("overlay-open");
 }
 
 // --- 6. Kick off ---

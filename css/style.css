@@ -27,6 +27,11 @@ body.dark {
   color-scheme: dark;
 }
 
+/* When overlay is open, lock background scroll */
+body.overlay-open {
+  overflow: hidden;
+}
+
 header {
   padding: 1.5rem 0 1rem;
 }
@@ -235,40 +240,6 @@ body.dark #clear-sorting:hover {
   padding-left: 0.2rem;
 }
 
-#cards-table th,
-#cards-table td {
-  padding: 0.3rem 0.4rem;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 0.8rem;
-}
-
-#cards-table th {
-  text-align: left;
-  background: #f9fafb;
-  color: #111827;
-  cursor: pointer;
-  user-select: none;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-#cards-table th.sort-asc::after {
-  content: " ▲";
-  font-size: 0.7rem;
-}
-
-#cards-table th.sort-desc::after {
-  content: " ▼";
-  font-size: 0.7rem;
-}
-
-#cards-table tbody tr:nth-child(even) {
-  background: #f9fafb;
-}
-
-#cards-table tbody tr:hover {
-  background-color: #e5e7eb;
-}
-
 /* Results count */
 
 #results-count {
@@ -299,7 +270,7 @@ body.dark #clear-sorting:hover {
   box-shadow: 0 1px 4px rgba(15, 23, 42, 0.25);
 }
 
-/* ---------- Detail section ---------- */
+/* ---------- Detail section (now hidden; overlay only) ---------- */
 
 .hidden {
   display: none;
@@ -361,7 +332,7 @@ body.dark #clear-sorting:hover {
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 0.4rem;
-  padding: 0.15rem 0;
+  padding: 0.08rem 0;  /* slightly tighter */
   font-size: 0.85rem;
   border-bottom: 1px solid #f1f5f9;
 }
@@ -388,7 +359,7 @@ body.dark #clear-sorting:hover {
 /* Detail message */
 
 .detail-message {
-  margin-top: 0.8rem;
+  margin-top: 0.4rem;   /* closer to details */
   font-style: italic;
   color: #334155;
   line-height: 1.4;
@@ -407,15 +378,15 @@ body.dark #clear-sorting:hover {
 }
 
 .rarity-rare {
-  color: #b7791f;  /*current warm gold */
+  color: #b7791f;  /* warm gold */
 }
 
 .rarity-epic {
-  color: #2563eb;  /* same blue */
+  color: #2563eb;  /* blue */
 }
 
 .rarity-legendary {
-  color: #7c3aed;  /* same purple */
+  color: #7c3aed;  /* purple */
 }
 
 /* Dark mode tweaks: a bit brighter against dark bg */
@@ -429,15 +400,15 @@ body.dark .rarity-uncommon {
 }
 
 body.dark .rarity-rare {
-  color: #facc15;  /* keep the bright gold */
+  color: #facc15;  /* bright gold */
 }
 
 body.dark .rarity-epic {
-  color: #60a5fa;  /* same light blue */
+  color: #60a5fa;  /* light blue */
 }
 
 body.dark .rarity-legendary {
-  color: #c4b5fd;  /* same lilac tone */
+  color: #c4b5fd;  /* lilac tone */
 }
 
 /* ---------- Back to top button ---------- */
@@ -586,7 +557,7 @@ body.dark .detail-row dt {
   color: #cbd5f5;
 }
 
-/* Detail panel */
+/* Detail panel (still populated, though hidden) */
 body.dark #detail-content {
   background-color: #0f172a;
   border: 1px solid #334155;
@@ -670,16 +641,16 @@ body.dark .wiki-note a:hover {
 }
 
 /* =========================================================
-   MOBILE DETAIL OVERLAY
+   FULL-SCREEN DETAIL OVERLAY
    ========================================================= */
 
 .mobile-detail-overlay {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.95); /* more solid: full-screen feel */
   display: none;
-  overflow-y: auto;
+  overflow-y: hidden; /* no vertical scroll on overlay */
 }
 
 .mobile-detail-overlay.open {
@@ -688,24 +659,27 @@ body.dark .wiki-note a:hover {
 
 .mobile-detail-inner {
   position: relative;
-  max-width: 480px;
-  margin: 1.5rem auto 2rem;
-  padding: 1rem 1.25rem 1.25rem;
-  border-radius: 12px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.2rem 1.75rem 1.4rem;
+  height: 100vh;         /* exactly viewport height */
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.45);
+  border-radius: 0;       /* full-screen sheet, no card bubble */
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Headings */
 .mobile-detail-heading {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.2rem;
   font-size: 1rem;
   font-weight: 600;
   color: #0f172a;
 }
 
 .mobile-detail-inner #mobile-detail-title {
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.4rem;
   font-size: 1.05rem;
   font-weight: 600;
 }
@@ -763,12 +737,12 @@ body.dark .mobile-detail-close:hover {
 }
 
 /* =========================================================
-   MOBILE NAVIGATION ARROWS — FIXED + FADE
+   NAVIGATION ARROWS — FIXED + FADE
    ========================================================= */
 
 .mobile-nav-arrow {
   position: fixed;
-  top: 40%;
+  top: 50%;
   transform: translateY(-50%);
   width: 2.4rem;
   height: 2.4rem;
@@ -815,22 +789,22 @@ body.dark .mobile-nav-arrow:hover {
 }
 
 /* =========================================================
-   DESKTOP OVERLAY LAYOUT — ART LEFT, DETAILS RIGHT
+   DESKTOP OVERLAY LAYOUT — BIG ART LEFT, NO SCROLL IN NORMAL CASES
    ========================================================= */
 
 @media (min-width: 900px) {
   .mobile-detail-inner {
-    max-width: 900px;
+    max-width: 1100px;
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: minmax(360px, 0.55fr) minmax(0, 0.45fr);
     grid-template-areas:
       "heading heading"
       "image   title"
       "image   details"
       "image   message";
-    column-gap: 1.5rem;
+    column-gap: 2rem;
     row-gap: 0.5rem;
-    padding-top: 1.5rem;
+    align-content: start;
   }
 
   .mobile-detail-heading {
@@ -841,6 +815,17 @@ body.dark .mobile-nav-arrow:hover {
     grid-area: image;
     justify-content: flex-start;
     margin-bottom: 0;
+    align-self: flex-start;
+
+    /* Keep the art visible; page itself no longer scrolls */
+    position: sticky;
+    top: 3.6rem;
+  }
+
+  /* Large art but with a viewport-based cap so text still fits */
+  .mobile-detail-image-wrapper img {
+    max-width: 460px;
+    max-height: calc(100vh - 10rem);
   }
 
   #mobile-detail-title {
@@ -849,7 +834,7 @@ body.dark .mobile-nav-arrow:hover {
 
   .mobile-detail-inner dl {
     grid-area: details;
-    margin-top: 0.3rem;
+    margin-top: 0.2rem;
   }
 
   #mobile-detail-message {
