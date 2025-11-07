@@ -4,7 +4,6 @@
 
 /* ---------- Base layout ---------- */
 
-
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   margin: 0;
@@ -27,7 +26,6 @@ body {
 body.dark {
   color-scheme: dark;
 }
-
 
 header {
   padding: 1.5rem 0 1rem;
@@ -135,33 +133,18 @@ body.dark #clear-sorting:hover {
   background: #334155;
 }
 
-
 /* ---------- Main layout: table + detail ---------- */
 
 #main-layout {
   margin-top: 1.5rem;
-  display: block;
-  gap: 1.5rem;
-}
-
-@media (min-width: 900px) {
-  #main-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(0, 1.2fr);
-    align-items: flex-start;
-    column-gap: 2rem;
-  }
 }
 
 /* ---------- Table ---------- */
-
 
 #table-section {
   max-width: 1100px;      /* limits sprawl on large screens */
   margin: 0 auto;         /* centre the whole table section */
 }
-
-
 
 /* table itself: same density, but with soft elevation + rounded corners */
 #cards-table {
@@ -324,6 +307,7 @@ body.dark #clear-sorting:hover {
 
 #detail-section {
   margin-top: 1.5rem;
+  display: none; /* inline detail panel is now unused; overlay only */
 }
 
 #detail-section h2 {
@@ -486,7 +470,7 @@ body.dark .rarity-legendary {
     align-items: flex-start;
   }
 
- html, body {
+  html, body {
     max-width: 100%;
     overflow-x: hidden;
   }
@@ -496,7 +480,7 @@ body.dark .rarity-legendary {
     font-size: 0.75rem;
   }
 
- /* Hide Card name column on very small screens */
+  /* Hide Card name column on very small screens */
   #cards-table th.col-cardName,
   #cards-table td.col-cardName {
     display: none;
@@ -504,10 +488,10 @@ body.dark .rarity-legendary {
 
   /* mobile column alignment */
 
-/* Art header left-aligned on mobile */
+  /* Art header left-aligned on mobile */
   #cards-table th:first-child {
-   text-align: left;
-}
+    text-align: left;
+  }
 
   /* Volume, Rarity, Reward centred on mobile */
   #cards-table th:nth-child(3),
@@ -520,7 +504,6 @@ body.dark .rarity-legendary {
   #cards-table td:nth-child(6) {
     text-align: center;
   }
-
 }
 
 @media (max-width: 600px) {
@@ -686,15 +669,6 @@ body.dark .wiki-note a:hover {
   color: #bfdbfe;
 }
 
-/* Make the detail panel stay in view on wider screens */
-@media (min-width: 900px) {
-  #detail-section {
-    position: sticky;
-    top: 1rem;
-    align-self: flex-start;
-  }
-}
-
 /* =========================================================
    MOBILE DETAIL OVERLAY
    ========================================================= */
@@ -840,17 +814,54 @@ body.dark .mobile-nav-arrow:hover {
   pointer-events: none;
 }
 
-/* Overlay is mobile-only; never show on desktop */
-@media (min-width: 900px) {
-  .mobile-detail-overlay {
-    display: none !important;
-  }
-}
+/* =========================================================
+   DESKTOP OVERLAY LAYOUT — ART LEFT, DETAILS RIGHT
+   ========================================================= */
 
-/* FINAL: hide inline detail panel on mobile; use overlay only */
-@media (max-width: 899px) {
-  body #detail-section {
-    display: none !important;
+@media (min-width: 900px) {
+  .mobile-detail-inner {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "heading heading"
+      "image   title"
+      "image   details"
+      "image   message";
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .mobile-detail-heading {
+    grid-area: heading;
+  }
+
+  .mobile-detail-image-wrapper {
+    grid-area: image;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+
+  #mobile-detail-title {
+    grid-area: title;
+  }
+
+  .mobile-detail-inner dl {
+    grid-area: details;
+    margin-top: 0.3rem;
+  }
+
+  #mobile-detail-message {
+    grid-area: message;
+  }
+
+  /* Close button as an absolute chip in top-right on desktop */
+  .mobile-detail-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    float: none;
   }
 }
 
