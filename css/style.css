@@ -857,3 +857,50 @@ body.dark .mobile-nav-arrow:hover {
     padding-right: 0.5rem;
   }
 }
+
+/* Mobile: lift the left/right arrows a bit */
+@media (max-width: 899px) {
+  .mobile-nav-arrow {
+    top: 40%;  /* was 50% */
+  }
+}
+
+/* Mobile: move text block down a touch */
+@media (max-width: 899px) {
+  #mobile-detail-title {
+    margin-top: 1rem;  /* increase from the current 0.4rem-ish */
+  }
+}
+
+/* Mobile: close button as a small chip in the top-right */
+@media (max-width: 899px) {
+  .mobile-detail-inner {
+    padding-top: 2.4rem;  /* leave room for the close chip */
+  }
+
+  .mobile-detail-close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.75rem;
+    float: none;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 999px;
+    background: #0f172a;
+    color: #f9fafb;
+  }
+
+  .mobile-detail-close:hover {
+    background: #111827;
+  }
+
+  body.dark .mobile-detail-close {
+    background: #e5e7eb;
+    color: #020617;
+  }
+
+  body.dark .mobile-detail-close:hover {
+    background: #f9fafb;
+  }
+}
+
