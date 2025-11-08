@@ -226,14 +226,31 @@ function attachEventListeners() {
     });
   }
 
-  window.addEventListener("scroll", () => {
+   window.addEventListener("scroll", () => {
     if (!backToTopBtn) return;
-    if (window.scrollY > 200) {
+
+    // Hide button entirely while the overlay is open
+    const overlay = document.getElementById("mobile-detail-overlay");
+    const overlayOpen = overlay && overlay.classList.contains("open");
+    if (overlayOpen) {
+      backToTopBtn.classList.add("hidden");
+      return;
+    }
+
+    // More robust scroll position detection
+    const scrollTop =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+
+    if (scrollTop > 200) {
       backToTopBtn.classList.remove("hidden");
     } else {
       backToTopBtn.classList.add("hidden");
     }
   });
+
 
   // Detail overlay
   const mobileOverlay = document.getElementById("mobile-detail-overlay");
