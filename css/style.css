@@ -904,3 +904,72 @@ body.dark .mobile-nav-arrow:hover {
   }
 }
 
+/* Mobile: add breathing room between heading and image */
+@media (max-width: 899px) {
+  .mobile-detail-heading {
+    margin-bottom: 0.8rem;  /* increase from 0.2rem */
+  }
+
+  .mobile-detail-image-wrapper {
+    margin-top: 0.4rem;  /* just a touch more air below heading */
+  }
+}
+
+@media (min-width: 900px) {
+  .mobile-detail-inner {
+    /* narrower gap between art and details */
+    column-gap: 1.2rem;
+  }
+
+  .mobile-detail-image-wrapper {
+    /* centre the art block horizontally within its column */
+    justify-content: center;
+  }
+
+  .mobile-detail-image-wrapper img {
+    /* allow the image to expand slightly if you like */
+    max-width: 480px;
+    max-height: calc(100vh - 10rem);
+  }
+}
+
+/* Desktop fine-tuning: balanced margins & subtle downward offset */
+@media (min-width: 900px) {
+  .mobile-detail-inner {
+    max-width: 1100px;
+    padding: 2.5rem 3.5rem 2.5rem 2rem; /* ↑ top ↓ bottom → right-left adjusted */
+    column-gap: 1.2rem; /* keep the comfortable gap you liked */
+    display: grid;
+    grid-template-columns: minmax(380px, 0.55fr) minmax(0, 0.45fr);
+    grid-template-areas:
+      "heading heading"
+      "image   title"
+      "image   details"
+      "image   message";
+    row-gap: 0.6rem;
+    align-content: start;
+  }
+
+  .mobile-detail-image-wrapper {
+    justify-content: center;
+    align-self: start;
+    margin-top: 0.8rem; /* small downward nudge */
+  }
+
+  .mobile-detail-image-wrapper img {
+    max-width: 460px;
+    max-height: calc(100vh - 8rem); /* keep proportions natural */
+  }
+
+  .mobile-detail-heading {
+    margin-bottom: 1rem; /* give breathing space above art */
+  }
+
+  /* Ensure details and message don’t stick too close to right edge */
+  .mobile-detail-inner dl,
+  #mobile-detail-message {
+    padding-right: 1.5rem;
+  }
+}
+
+
