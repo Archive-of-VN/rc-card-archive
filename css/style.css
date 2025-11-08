@@ -785,7 +785,7 @@ body.dark .mobile-nav-arrow:hover {
       "image   details"
       "image   message";
     column-gap: 0;          /* details pressed closer to the art */
-    row-gap: 0.6rem;
+    row-gap: 0.3rem;
     align-content: start;
   }
 
@@ -829,6 +829,7 @@ body.dark .mobile-nav-arrow:hover {
 
   #mobile-detail-message {
     grid-area: message;
+    margin-top: -1rem; /* pull message closer to details */
     margin-right: 7rem;
     padding-right: 0;
   }
