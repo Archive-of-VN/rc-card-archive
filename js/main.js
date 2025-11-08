@@ -257,7 +257,7 @@ function attachEventListeners() {
   });
 
 
-  // Detail overlay
+    // Detail overlay
   const mobileOverlay = document.getElementById("mobile-detail-overlay");
   const mobileClose = document.getElementById("mobile-detail-close");
 
@@ -283,7 +283,30 @@ function attachEventListeners() {
         closeOverlay();
       }
     });
+
+    // Keyboard navigation while overlay is open (desktop + any keyboard)
+    document.addEventListener("keydown", (event) => {
+      if (!mobileOverlay.classList.contains("open")) return;
+
+      // Don't hijack keys while the user is typing in a form field
+      const activeTag = document.activeElement && document.activeElement.tagName;
+      if (activeTag === "INPUT" || activeTag === "SELECT" || activeTag === "TEXTAREA") {
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showPrevCard();
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showNextCard();
+      } else if (event.key === "Escape" || event.key === "Esc") {
+        event.preventDefault();
+        closeOverlay();
+      }
+    });
   }
+
 
 
   // Navigation arrows (used on all viewports)
