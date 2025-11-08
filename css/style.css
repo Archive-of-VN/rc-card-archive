@@ -182,7 +182,6 @@ body.dark #clear-sorting:hover {
   background: #f9fafb; /* solid background when stuck */
 }
 
-
 /* Art header centred, others default to left unless overridden below */
 #cards-table th {
   text-align: left;
@@ -737,7 +736,7 @@ body.dark .mobile-detail-close:hover {
 }
 
 /* =========================================================
-   NAVIGATION ARROWS — FIXED + FADE
+   NAVIGATION ARROWS — BASE
    ========================================================= */
 
 .mobile-nav-arrow {
@@ -789,66 +788,8 @@ body.dark .mobile-nav-arrow:hover {
 }
 
 /* =========================================================
-   DESKTOP OVERLAY LAYOUT — BIG ART LEFT, NO SCROLL IN NORMAL CASES
+   RESPONSIVE OVERLAY LAYOUT
    ========================================================= */
-
-@media (min-width: 900px) {
-  .mobile-detail-inner {
-    max-width: 1100px;
-    display: grid;
-    grid-template-columns: minmax(360px, 0.55fr) minmax(0, 0.45fr);
-    grid-template-areas:
-      "heading heading"
-      "image   title"
-      "image   details"
-      "image   message";
-    column-gap: 2rem;
-    row-gap: 0.5rem;
-    align-content: start;
-  }
-
-  .mobile-detail-heading {
-    grid-area: heading;
-  }
-
-  .mobile-detail-image-wrapper {
-    grid-area: image;
-    justify-content: flex-start;
-    margin-bottom: 0;
-    align-self: flex-start;
-
-    /* Keep the art visible; page itself no longer scrolls */
-    position: sticky;
-    top: 3.6rem;
-  }
-
-  /* Large art but with a viewport-based cap so text still fits */
-  .mobile-detail-image-wrapper img {
-    max-width: 460px;
-    max-height: calc(100vh - 10rem);
-  }
-
-  #mobile-detail-title {
-    grid-area: title;
-  }
-
-  .mobile-detail-inner dl {
-    grid-area: details;
-    margin-top: 0.2rem;
-  }
-
-  #mobile-detail-message {
-    grid-area: message;
-  }
-
-  /* Close button as an absolute chip in top-right on desktop */
-  .mobile-detail-close {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    float: none;
-  }
-}
 
 /* Reduce horizontal padding on small screens */
 @media (max-width: 768px) {
@@ -915,60 +856,113 @@ body.dark .mobile-nav-arrow:hover {
   }
 }
 
-@media (min-width: 900px) {
-  .mobile-detail-inner {
-    /* narrower gap between art and details */
-    column-gap: 1.2rem;
-  }
+/* =========================================================
+   DESKTOP OVERLAY LAYOUT + DETAILS PULLED LEFT
+   ========================================================= */
 
-  .mobile-detail-image-wrapper {
-    /* centre the art block horizontally within its column */
-    justify-content: center;
-  }
-
-  .mobile-detail-image-wrapper img {
-    /* allow the image to expand slightly if you like */
-    max-width: 480px;
-    max-height: calc(100vh - 10rem);
-  }
-}
-
-/* Desktop fine-tuning: balanced margins & subtle downward offset */
 @media (min-width: 900px) {
   .mobile-detail-inner {
     max-width: 1100px;
-    padding: 2.5rem 3.5rem 2.5rem 2rem; /* ↑ top ↓ bottom → right-left adjusted */
-    column-gap: 1.2rem; /* keep the comfortable gap you liked */
+    height: 100vh;
+    margin: 0 auto;
+    padding: 2.5rem 3.1rem 2.5rem 2.5rem;
     display: grid;
-    grid-template-columns: minmax(380px, 0.55fr) minmax(0, 0.45fr);
+    grid-template-columns: minmax(400px, 1fr) minmax(0, 0.9fr);
     grid-template-areas:
       "heading heading"
       "image   title"
       "image   details"
       "image   message";
+    column-gap: 0;          /* no gap: details pressed closer to the art */
     row-gap: 0.6rem;
     align-content: start;
   }
 
+  .mobile-detail-heading {
+    grid-area: heading;
+    margin-bottom: 1rem;
+  }
+
   .mobile-detail-image-wrapper {
+    grid-area: image;
     justify-content: center;
-    align-self: start;
-    margin-top: 0.8rem; /* small downward nudge */
+    align-self: flex-start;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+    position: sticky;
+    top: 3.6rem;
   }
 
   .mobile-detail-image-wrapper img {
     max-width: 460px;
-    max-height: calc(100vh - 8rem); /* keep proportions natural */
+    max-height: calc(100vh - 8rem);
   }
 
-  .mobile-detail-heading {
-    margin-bottom: 1rem; /* give breathing space above art */
+  #mobile-detail-title {
+    grid-area: title;
   }
 
-  /* Ensure details and message don’t stick too close to right edge */
   .mobile-detail-inner dl,
   #mobile-detail-message {
-    padding-right: 1.5rem;
+    grid-area: auto;
+    margin-right: 7rem;  /* pull the lines left and away from the edge/arrow */
+    padding-right: 0;
+  }
+
+  .mobile-detail-inner dl {
+    grid-area: details;
+    margin-top: 0.2rem;
+  }
+
+  #mobile-detail-message {
+    grid-area: message;
+  }
+
+  .mobile-detail-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    float: none;
+  }
+
+  /* Desktop navigation arrows (keep where you liked them) */
+  .mobile-nav-arrow {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.85);
+    color: #f9fafb;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    z-index: 120;
+    transition: background 0.25s ease, opacity 0.25s ease;
+  }
+
+  .mobile-nav-prev {
+    left: 2.2rem;
+  }
+
+  .mobile-nav-next {
+    right: 2.2rem;
+  }
+
+  .mobile-nav-arrow:hover {
+    background: rgba(15, 23, 42, 1);
+  }
+
+  body.dark .mobile-nav-arrow {
+    background: rgba(148, 163, 184, 0.9);
+    color: #020617;
+  }
+
+  body.dark .mobile-nav-arrow:hover {
+    background: rgba(248, 250, 252, 0.95);
   }
 }
-
