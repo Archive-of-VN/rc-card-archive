@@ -857,7 +857,7 @@ body.dark .mobile-nav-arrow:hover {
 }
 
 /* =========================================================
-   DESKTOP OVERLAY LAYOUT + DETAILS PULLED LEFT
+   DESKTOP OVERLAY LAYOUT + DETAILS PULLED LEFT & SPACED
    ========================================================= */
 
 @media (min-width: 900px) {
@@ -873,7 +873,7 @@ body.dark .mobile-nav-arrow:hover {
       "image   title"
       "image   details"
       "image   message";
-    column-gap: 0;          /* no gap: details pressed closer to the art */
+    column-gap: 0;          /* details pressed closer to the art */
     row-gap: 0.6rem;
     align-content: start;
   }
@@ -902,20 +902,24 @@ body.dark .mobile-nav-arrow:hover {
     grid-area: title;
   }
 
-  .mobile-detail-inner dl,
-  #mobile-detail-message {
-    grid-area: auto;
-    margin-right: 7rem;  /* pull the lines left and away from the edge/arrow */
-    padding-right: 0;
-  }
-
+  /* Details block: pulled left, more line-height */
   .mobile-detail-inner dl {
     grid-area: details;
     margin-top: 0.2rem;
+    margin-right: 7rem;     /* your balanced right margin */
+    padding-right: 0;
+    line-height: 1.8;       /* more vertical room between lines */
+  }
+
+  /* Only loosen rows inside the overlay, not globally */
+  .mobile-detail-inner .detail-row {
+    padding: 0.25rem 0;
   }
 
   #mobile-detail-message {
     grid-area: message;
+    margin-right: 7rem;
+    padding-right: 0;
   }
 
   .mobile-detail-close {
@@ -925,7 +929,7 @@ body.dark .mobile-nav-arrow:hover {
     float: none;
   }
 
-  /* Desktop navigation arrows (keep where you liked them) */
+  /* Desktop navigation arrows (unchanged positions you liked) */
   .mobile-nav-arrow {
     position: absolute;
     top: 45%;
