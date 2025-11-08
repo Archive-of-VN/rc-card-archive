@@ -593,53 +593,6 @@ body.dark .thumb-image {
 }
 
 /* =========================================================
-   FOOTER AND WIKI LINK STYLING
-   ========================================================= */
-
-footer {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e5e7eb;
-  font-size: 0.8rem;
-  color: #6b7280;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.wiki-note {
-  font-size: 0.85rem;
-  color: #374151;
-  margin-top: 0.6rem;
-}
-
-.wiki-note a {
-  color: #0f172a;
-  text-decoration: underline;
-}
-
-.wiki-note a:hover {
-  color: #1e3a8a;
-}
-
-/* --- Dark mode adjustments --- */
-body.dark footer {
-  border-top: 1px solid #334155;
-  color: #94a3b8;
-}
-
-body.dark .wiki-note {
-  color: #cbd5f5;
-}
-
-body.dark .wiki-note a {
-  color: #93c5fd;
-}
-
-body.dark .wiki-note a:hover {
-  color: #bfdbfe;
-}
-
-/* =========================================================
    FULL-SCREEN DETAIL OVERLAY
    ========================================================= */
 
