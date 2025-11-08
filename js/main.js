@@ -168,44 +168,6 @@ function populateFilterOptions() {
   });
 }
 
-function applySortVisuals(activeKey) {
-  const tableHeaders = document.querySelectorAll("#cards-table thead th");
-  const mobileHeaders = document.querySelectorAll("#mobile-sticky-header [data-sort-key]");
-  const dirClass = currentSort.direction === "asc" ? "sort-asc" : "sort-desc";
-
-  // reset all
-  tableHeaders.forEach(h => h.classList.remove("sort-asc", "sort-desc"));
-  mobileHeaders.forEach(btn => btn.classList.remove("sort-asc", "sort-desc"));
-
-  // mark the active key on both header sets
-  tableHeaders.forEach(h => {
-    if (h.dataset.sortKey === activeKey) {
-      h.classList.add(dirClass);
-    }
-  });
-
-  mobileHeaders.forEach(btn => {
-    if (btn.dataset.sortKey === activeKey) {
-      btn.classList.add(dirClass);
-    }
-  });
-}
-
-function handleSort(key) {
-  if (!key) return;
-
-  if (currentSort.key === key) {
-    currentSort.direction = currentSort.direction === "asc" ? "desc" : "asc";
-  } else {
-    currentSort.key = key;
-    currentSort.direction = "asc";
-  }
-
-  applySortVisuals(key);
-  render();
-}
-
-
 function attachEventListeners() {
   searchInput.addEventListener("input", render);
   filterVolume.addEventListener("change", render);
@@ -214,24 +176,29 @@ function attachEventListeners() {
   filterReward.addEventListener("change", render);
   filterRarity.addEventListener("change", render);
 
-    // Column header sorting – desktop table header
+  // Column header sorting
   const headers = document.querySelectorAll("#cards-table thead th");
   headers.forEach(th => {
     th.addEventListener("click", () => {
-      handleSort(th.dataset.sortKey);
+      const key = th.dataset.sortKey;
+      if (!key) return;
+
+      if (currentSort.key === key) {
+        currentSort.direction =
+          currentSort.direction === "asc" ? "desc" : "asc";
+      } else {
+        currentSort.key = key;
+        currentSort.direction = "asc";
+      }
+
+      headers.forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+      th.classList.add(
+        currentSort.direction === "asc" ? "sort-asc" : "sort-desc"
+      );
+
+      render();
     });
   });
-
-  // Column header sorting – mobile sticky header bar
-  const mobileHeaderButtons = document.querySelectorAll(
-    "#mobile-sticky-header [data-sort-key]"
-  );
-  mobileHeaderButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      handleSort(btn.dataset.sortKey);
-    });
-  });
-
 
   // Row click → detail view
   tableBody.addEventListener("click", (event) => {
