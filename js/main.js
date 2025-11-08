@@ -308,7 +308,6 @@ function attachEventListeners() {
   }
 
 
-
   // Navigation arrows (used on all viewports)
   const mobilePrev = document.getElementById("mobile-detail-prev");
   const mobileNext = document.getElementById("mobile-detail-next");
@@ -317,6 +316,11 @@ function attachEventListeners() {
     mobilePrev.addEventListener("click", (event) => {
       event.stopPropagation();
       showPrevCard();
+
+      // remove focus highlight after click
+      if (event.currentTarget && event.currentTarget.blur) {
+        event.currentTarget.blur();
+      }
     });
   }
 
@@ -324,6 +328,11 @@ function attachEventListeners() {
     mobileNext.addEventListener("click", (event) => {
       event.stopPropagation();
       showNextCard();
+
+      // remove focus highlight after click
+      if (event.currentTarget && event.currentTarget.blur) {
+        event.currentTarget.blur();
+      }
     });
   }
 
