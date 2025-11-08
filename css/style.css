@@ -138,7 +138,23 @@ body.dark #clear-sorting:hover {
   background: #334155;
 }
 
-/* ---------- Main layout: table + detail ---------- */
+/* --- Separate action row for Clear buttons (desktop) --- */
+
+@media (min-width: 769px) {
+  #controls .control.actions {
+    flex-basis: 100%;        /* own row under the filters */
+    flex-direction: row;     /* buttons side by side */
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  #controls .control.actions button {
+    flex: 0 0 auto;          /* don't stretch full width */
+  }
+}
+
+/* ---------- Main layout: table ---------- */
 
 #main-layout {
   margin-top: 1.5rem;
@@ -269,62 +285,10 @@ body.dark #clear-sorting:hover {
   box-shadow: 0 1px 4px rgba(15, 23, 42, 0.25);
 }
 
-/* ---------- Detail section (now hidden; overlay only) ---------- */
+/* ---------- Shared detail styles (rows + message) ---------- */
 
 .hidden {
   display: none;
-}
-
-#detail-section {
-  margin-top: 1.5rem;
-  display: none; /* inline detail panel is now unused; overlay only */
-}
-
-#detail-section h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.2rem;
-}
-
-#detail-placeholder {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-#detail-content {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 0.75rem 0.9rem;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  margin-top: 0.4rem;
-}
-
-#detail-title {
-  margin: 0 0 0.6rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-/* Detail image */
-
-.detail-image-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 0.75rem;
-}
-
-.detail-image-wrapper img {
-  max-width: 160px;
-  max-height: 220px;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
-}
-
-/* Detail rows */
-
-#detail-content dl {
-  margin: 0;
 }
 
 .detail-row {
@@ -349,8 +313,7 @@ body.dark #clear-sorting:hover {
   margin: 0;
 }
 
-/* Allow multi-line book display in details (desktop + mobile) */
-#detail-book,
+/* Allow multi-line book display in overlay details */
 #mobile-detail-book {
   white-space: pre-line;
 }
@@ -440,7 +403,8 @@ body.dark .rarity-legendary {
     align-items: flex-start;
   }
 
-  html, body {
+  html,
+  body {
     max-width: 100%;
     overflow-x: hidden;
   }
@@ -556,13 +520,7 @@ body.dark .detail-row dt {
   color: #cbd5f5;
 }
 
-/* Detail panel (still populated, though hidden) */
-body.dark #detail-content {
-  background-color: #0f172a;
-  border: 1px solid #334155;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.4);
-}
-
+/* Detail message in dark mode (overlay) */
 body.dark .detail-message {
   color: #cbd5f5;
 }

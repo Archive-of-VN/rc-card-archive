@@ -413,16 +413,6 @@ function sortCards(list) {
     Legendary: 4
   };
 
-  function genderRank(card) {
-    const g = card.gender;
-    if (Array.isArray(g)) return 1;       // mixed tags
-    if (g === "Male") return 0;
-    if (g === "Female") return 2;
-    if (g === "Non-binary") return 3;
-    if (g === "Inanimate") return 4;
-    return 99;
-  }
-
   // Cups before Diamonds; others last
   const rewardTypeOrder = {
     Cups: 0,
@@ -478,15 +468,6 @@ function sortCards(list) {
       if (rta !== rtb) return rta - rtb;
 
       // 5) fallback: original index
-      return a._index - b._index;
-    }
-
-    // --- Special: gender ---
-    if (key === "gender") {
-      const ga = genderRank(a);
-      const gb = genderRank(b);
-
-      if (ga !== gb) return (ga - gb) * factor;
       return a._index - b._index;
     }
 
@@ -607,75 +588,19 @@ function showNextCard() {
 }
 
 function showCardDetails(card) {
-  const placeholder = document.getElementById("detail-placeholder");
-  const content = document.getElementById("detail-content");
-
-  const imageWrapper = document.getElementById("detail-image-wrapper");
-  const imageEl = document.getElementById("detail-image");
-  const titleEl = document.getElementById("detail-title");
-  const charEl = document.getElementById("detail-character");
-  const cardNameEl = document.getElementById("detail-cardName");
-  const volumeEl = document.getElementById("detail-volume");
-  const bookEl = document.getElementById("detail-book");
-  const genderEl = document.getElementById("detail-gender");
-  const rewardEl = document.getElementById("detail-reward");
-  const rarityEl = document.getElementById("detail-rarity");
-  const messageEl = document.getElementById("detail-message");
-
-  if (placeholder) placeholder.classList.add("hidden");
-  if (content) content.classList.remove("hidden");
-
-  // Book display (single or multiple) – line breaks between stories
+  // Derived display strings
   const bookDisplay = Array.isArray(card.book)
     ? card.book.join("\n")
     : (card.book ?? "");
 
-  // --- desktop / regular detail panel (still populated, though hidden in CSS) ---
-  if (card.image && imageWrapper && imageEl) {
-    imageWrapper.classList.remove("hidden");
-    imageEl.src = card.image;
-    imageEl.alt = `${card.character ?? ""} – ${card.cardName ?? ""}`;
-  } else if (imageWrapper && imageEl) {
-    imageWrapper.classList.add("hidden");
-    imageEl.removeAttribute("src");
-    imageEl.alt = "";
-  }
-
-  if (titleEl) titleEl.textContent = `${card.character ?? ""} – ${card.cardName ?? ""}`;
-  if (charEl) charEl.textContent = card.character ?? "";
-  if (cardNameEl) cardNameEl.textContent = card.cardName ?? "";
-  if (volumeEl) volumeEl.textContent = card.volume ?? "";
-  if (bookEl) bookEl.textContent = bookDisplay;
-
   const genderDisplay = Array.isArray(card.gender)
     ? card.gender.join(", ")
     : (card.gender ?? "");
-  if (genderEl) genderEl.textContent = genderDisplay;
-
-  if (rewardEl) rewardEl.textContent = formatRewardShort(card);
-
-  if (rarityEl) {
-    rarityEl.textContent = card.rarity ?? "";
-
-    // reset old rarity classes
-    rarityEl.classList.remove(
-      "rarity-common",
-      "rarity-uncommon",
-      "rarity-rare",
-      "rarity-epic",
-      "rarity-legendary"
-    );
-
-    if (card.rarity) {
-      const rarityClass = `rarity-${card.rarity.toLowerCase().replace(/\s+/g, "-")}`;
-      rarityEl.classList.add(rarityClass);
-    }
-  }
-
-  if (messageEl) messageEl.textContent = card.message ?? "";
 
   // --- overlay version (all viewports) ---
   const mobileOverlay = document.getElementById("mobile-detail-overlay");
+  if (!mobileOverlay) return;
+
   const mImageWrapper = document.getElementById("mobile-detail-image-wrapper");
   const mImageEl = document.getElementById("mobile-detail-image");
   const mTitleEl = document.getElementById("mobile-detail-title");
@@ -687,8 +612,6 @@ function showCardDetails(card) {
   const mRewardEl = document.getElementById("mobile-detail-reward");
   const mRarityEl = document.getElementById("mobile-detail-rarity");
   const mMessageEl = document.getElementById("mobile-detail-message");
-
-  if (!mobileOverlay) return;
 
   // image
   if (card.image && mImageWrapper && mImageEl) {
@@ -710,9 +633,7 @@ function showCardDetails(card) {
   if (mVolumeEl) mVolumeEl.textContent = card.volume ?? "";
   if (mBookEl) mBookEl.textContent = bookDisplay;
   if (mGenderEl) mGenderEl.textContent = genderDisplay;
-  if (mRewardEl) {
-    mRewardEl.textContent = formatRewardShort(card);
-  }
+  if (mRewardEl) mRewardEl.textContent = formatRewardShort(card);
   if (mRarityEl) mRarityEl.textContent = card.rarity ?? "";
   if (mMessageEl) mMessageEl.textContent = card.message ?? "";
 

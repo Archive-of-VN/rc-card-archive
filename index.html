@@ -71,16 +71,10 @@
       </select>
     </div>
 
-<div class="control">
-  <label>&nbsp;</label>
-  <button id="clear-filters" type="button">Clear filters</button>
-</div>
-
-<div class="control">
-  <label>&nbsp;</label>
-  <button id="clear-sorting" type="button">Clear sorting</button>
-</div>
-
+    <div class="control actions">
+        <button id="clear-filters" type="button">Clear filters</button>
+        <button id="clear-sorting" type="button">Clear sorting</button>
+    </div>
 
   </section>
 
@@ -104,52 +98,7 @@
       <p id="results-count"></p>
     </section>
 
-    <section id="detail-section">
-      <h2>Card details</h2>
-      <p id="detail-placeholder">Click a card in the table to see its details here.</p>
-
-      <div id="detail-content" class="hidden">
-        <div id="detail-image-wrapper" class="detail-image-wrapper hidden">
-          <img id="detail-image" alt="" />
-        </div>
-
-        <h3 id="detail-title"></h3>
-
-        <dl>
-          <div class="detail-row">
-            <dt>Character</dt>
-            <dd id="detail-character"></dd>
-          </div>
-          <div class="detail-row">
-            <dt>Card name</dt>
-            <dd id="detail-cardName"></dd>
-          </div>
-          <div class="detail-row">
-            <dt>Volume</dt>
-            <dd id="detail-volume"></dd>
-          </div>
-          <div class="detail-row">
-            <dt>Rarity</dt>
-            <dd id="detail-rarity"></dd>
-          </div>
-          <div class="detail-row">
-            <dt>Reward</dt>
-            <dd id="detail-reward"></dd>
-          </div>
-          <div class="detail-row">
-            <dt>Book</dt>
-            <dd id="detail-book"></dd>
-          </div>
-          <div class="detail-row">
-            <dt>Gender</dt>
-            <dd id="detail-gender"></dd>
-          </div>
-        </dl>
-
-        <p id="detail-message" class="detail-message"></p>
       </div>
-    </section>
-  </div>
 
 <!-- Mobile detail overlay -->
 <div id="mobile-detail-overlay" class="mobile-detail-overlay hidden">
