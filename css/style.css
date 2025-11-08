@@ -882,3 +882,12 @@ body.dark .mobile-nav-arrow:hover {
     background: rgba(248, 250, 252, 0.95);
   }
 }
+
+/* Extra spacing between Clear buttons on mobile */
+@media (max-width: 768px) {
+  #controls .control.actions {
+    flex-direction: column; /* stacked vertically */
+    gap: 0.6rem;            /* was probably smaller before */
+  }
+}
+
