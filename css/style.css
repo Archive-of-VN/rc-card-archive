@@ -170,17 +170,21 @@ body.dark #clear-sorting:hover {
   font-size: 0.8rem;
 }
 
-/* Sticky header: stays at top while page scrolls */
+/* Sticky header: works reliably on mobile & desktop */
 #cards-table thead {
-  position: sticky;
-  top: 0;
-  z-index: 5;
+  z-index: 5; /* no position here */
 }
 
 #cards-table thead th {
   position: sticky;
   top: 0;
-  z-index: 6;  /* a hair above the row cells */
+  z-index: 6;
+  background: #f9fafb;  /* keep header solid when it sticks */
+}
+
+/* Dark mode header background when sticky */
+body.dark #cards-table thead th {
+  background-color: #1e293b;
 }
 
 /* Art header centred, others default to left unless overridden below */
