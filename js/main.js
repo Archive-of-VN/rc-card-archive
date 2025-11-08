@@ -2,7 +2,7 @@
 
 const tableBody = document.querySelector("#cards-table tbody");
 const resultsCount = document.querySelector("#results-count");
-const backToTopBtn = document.getElementById("back-to-top");
+let backToTopBtn; // will be assigned in init() once DOM has progressed
 
 const searchInput = document.getElementById("search-input");
 const filterVolume = document.getElementById("filter-volume");
@@ -85,11 +85,16 @@ async function loadCards() {
 
 async function init() {
   await loadCards();
+
+  // now the parser has had time to create the button element
+  backToTopBtn = document.getElementById("back-to-top");
+
   initTheme();
   populateFilterOptions();
   attachEventListeners();
   render();
 }
+
 
 // --- 4. Filters & events ---
 
