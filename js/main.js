@@ -266,6 +266,9 @@ function attachEventListeners() {
       mobileOverlay.classList.remove("open");
       mobileOverlay.classList.add("hidden");
       document.body.classList.remove("overlay-open");
+
+      // After closing, scroll the table to the card we ended on
+      scrollToCurrentCard();
     }
 
     if (mobileClose) {
@@ -281,6 +284,7 @@ function attachEventListeners() {
       }
     });
   }
+
 
   // Navigation arrows (used on all viewports)
   const mobilePrev = document.getElementById("mobile-detail-prev");
@@ -585,6 +589,37 @@ function showNextCard() {
   if (card) {
     showCardDetails(card);
   }
+}
+
+function scrollTableToCard(cardId) {
+  if (!cardId) return;
+
+  const row = document.querySelector(
+    `#cards-table tbody tr[data-card-id="${cardId}"]`
+  );
+  if (!row) return;
+
+  const rect = row.getBoundingClientRect();
+  const absoluteY = window.pageYOffset + rect.top;
+
+  // Offset so the row isn't glued to the very top of the viewport.
+  const offset = 120; // tweak to taste
+  const targetY = Math.max(absoluteY - offset, 0);
+
+  window.scrollTo({
+    top: targetY,
+    behavior: "smooth"
+  });
+}
+
+function scrollToCurrentCard() {
+  if (!currentList || currentIndex < 0 || currentIndex >= currentList.length) {
+    return;
+  }
+  const card = currentList[currentIndex];
+  if (!card) return;
+
+  scrollTableToCard(card.id);
 }
 
 function showCardDetails(card) {
