@@ -975,5 +975,59 @@ body.dark .mobile-nav-arrow:hover {
     padding-right: 1.5rem;
   }
 }
+/* ================================================
+   MOBILE STICKY HEADER BAR FOR TABLE SORTING
+   ================================================ */
+
+.mobile-sticky-header {
+  display: none; /* desktop/default: hidden */
+}
+
+@media (max-width: 899px) {
+  .mobile-sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.75rem;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .mobile-header-cell {
+    flex: 1 1 0;
+    border: none;
+    padding: 0.2rem 0.3rem;
+    background: transparent;
+    text-align: center;
+    font: inherit;
+    color: #111827;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Tiny sort arrows on mobile header buttons */
+  .mobile-header-cell.sort-asc::after {
+    content: " ▲";
+    font-size: 0.65rem;
+  }
+
+  .mobile-header-cell.sort-desc::after {
+    content: " ▼";
+    font-size: 0.65rem;
+  }
+
+  body.dark .mobile-sticky-header {
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+  }
+
+  body.dark .mobile-header-cell {
+    color: #e5e7eb;
+  }
+}
+
 
 
