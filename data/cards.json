@@ -4,13 +4,13 @@
     "character": "Dmitry",
     "cardName": "Deadly Attraction",
     "volume": 1,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Male",
     "reward": "Diamonds",
     "rarity": "Uncommon",
     "rewardAmount":40,
     "message": "People only voluntarily kill themselves in two ways: cigarettes and love.",
-    "image": "images/dmitryvol1.png"
+    "image": "images/vol-01/dmitryvol1.png"
   },
 {
     "id": "avavol1",
@@ -23,7 +23,7 @@
     "rarity": "Rare",
     "rewardAmount":8,
     "message": "Petals fall, but the soul dances on...",
-    "image": "images/avavol1.png"
+    "image": "images/vol-01/avavol1.png"
   },
 {
     "id": "feloniavol1",
@@ -36,7 +36,7 @@
     "rarity": "Common",
     "rewardAmount":20,
     "message": "Words aren't necessary to show love.",
-    "image": "images/feloniavol1.png"
+    "image": "images/vol-01/feloniavol1.png"
   },
 {
     "id": "ivovol1",
@@ -49,7 +49,7 @@
     "rarity": "Uncommon",
     "rewardAmount":4,
     "message": "I was saving the world, and you saved me from it.",
-    "image": "images/ivovol1.png"
+    "image": "images/vol-01/ivovol1.png"
   },
 {
     "id": "vladvol1",
@@ -62,7 +62,7 @@
     "rarity": "Epic",
     "rewardAmount":120,
     "message": "When everything you love dies, the world will plunge into darkness. But true love is stronger than death itself.",
-    "image": "images/vladvol1.png"
+    "image": "images/vol-01/vladvol1.png"
   },
 {
     "id": "gisellavol1",
@@ -75,7 +75,7 @@
     "rarity": "Common",
     "rewardAmount":2,
     "message": "Hearts are my favorite treasures to steal.",
-    "image": "images/gisellavol1.png"
+    "image": "images/vol-01/gisellavol1.png"
   },
 {
     "id": "lucienvol1",
@@ -88,7 +88,7 @@
     "rarity": "Common",
     "rewardAmount":20,
     "message": "Glad we met. Now I can finally get to the main course.",
-    "image": "images/lucienvol1.png"
+    "image": "images/vol-01/lucienvol1.png"
   },
 {
     "id": "zainvol1",
@@ -101,7 +101,7 @@
     "rarity": "Uncommon",
     "rewardAmount":4,
     "message": "I used to run from love, but I was lucky enough to find you!",
-    "image": "images/zainvol1.png"
+    "image": "images/vol-01/zainvol1.png"
   },
 
   {
@@ -115,7 +115,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "Whatever misfortune has befallen you, Christmas will make it brighter.",
-    "image": "images/christmasvol1.png"
+    "image": "images/vol-01/christmasvol1.png"
   },
 {
     "id": "hodgevol1",
@@ -128,33 +128,33 @@
     "rarity": "Common",
     "rewardAmount":2,
     "message": "Enemies are all around, but you are the reason my heart beats.",
-    "image": "images/hodgevol1.png"
+    "image": "images/vol-01/hodgevol1.png"
   },
  {
     "id": "limavol2",
     "character": "Lima Berg",
     "cardName": "On the Trail",
     "volume": 2,
-    "book": "Kali: Call of Darkness",
+    "book": "Kali — Call of Darkness",
     "gender": "Female",
     "reward": "Diamonds",
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "Together, we'll uncover the truth.",
-    "image": "images/limavol2.png"
+    "image": "images/vol-02/limavol2.png"
   },
  {
     "id": "killianvol2",
     "character": "Killian Lightwood",
     "cardName": "Wanted",
     "volume": 2,
-    "book": "Kali: Call of Darkness",
+    "book": "Kali — Call of Darkness",
     "gender": "Male",
     "reward": "Cups",
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "Rules are made to be broken.",
-    "image": "images/killianvol2.png"
+    "image": "images/vol-02/killianvol2.png"
   },
  {
     "id": "shaarnezvol2",
@@ -167,20 +167,20 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "You're bittersweet like wild honey.",
-    "image": "images/shaarnezvol2.png"
+    "image": "images/vol-02/shaarnezvol2.png"
   },
  {
     "id": "cainvol2",
     "character": "Cain",
     "cardName": "Angel of Death",
     "volume": 2,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Male",
     "reward": "Cups",
     "rarity": "Rare",
     "rewardAmount": 8,
     "message": "There are no winners in a dispute between loved ones.",
-    "image": "images/cainvol2.png"
+    "image": "images/vol-02/cainvol2.png"
   },
  {
     "id": "johnvol2",
@@ -193,7 +193,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "I'm willing to wait for you for an eternity.",
-    "image": "images/johnvol2.png"
+    "image": "images/vol-02/johnvol2.png"
   },
 
   {
@@ -207,20 +207,20 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Are you ready to forget reality and dive into sin?",
-    "image": "images/mimivol2.png"
+    "image": "images/vol-02/mimivol2.png"
   },
 {
     "id": "dmitryannavol3",
     "character": "Anna and Dmitry",
     "cardName": "Gift With a Surprise",
     "volume": 3,
-    "book": ["Heaven's Secret: Requiem","Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem","Heaven's Secret 3"],
     "gender": ["Female", "Male"],
     "reward": "Diamonds",
     "rarity": "Epic",
     "rewardAmount": 120,
     "message": "The best gifts are the ones that make memories!",
-    "image": "images/dmitryannavol3.png"
+    "image": "images/vol-03/dmitryannavol3.png"
   },
 {
     "id": "waltervol3",
@@ -233,7 +233,7 @@
     "rarity": "Rare",
     "rewardAmount": 8,
     "message": "A precious gift for the precious light you bring to my days.",
-    "image": "images/waltervol3.png"
+    "image": "images/vol-03/waltervol3.png"
   },
 {
     "id": "murphyvol3",
@@ -246,7 +246,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "I'm the one responsible for your holiday sins.",
-    "image": "images/murphyvol3.png"
+    "image": "images/vol-03/murphyvol3.png"
   },
 {
     "id": "reinholdvol3",
@@ -259,20 +259,20 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Why'd it have to be ducks?",
-    "image": "images/reinholdvol3.png"
+    "image": "images/vol-03/reinholdvol3.png"
   },
 {
     "id": "doranvol3",
     "character": "Doran Basu",
     "cardName": "Bengali Lumberjack",
     "volume": 3,
-    "book": "Kali: Flame of Samsara",
+    "book": "Kali — Flame of Samsara",
     "gender": "Male",
     "reward": "Diamonds",
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "No one can resist Doran Basu's blade. Not even you!",
-    "image": "images/doranvol3.png"
+    "image": "images/vol-03/doranvol3.png"
   },
 {
     "id": "onyxvol3",
@@ -285,7 +285,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "It doesn't matter how you decorate the tree, what matters is the holiday spirit in your heart.",
-    "image": "images/onyxvol3.png"
+    "image": "images/vol-03/onyxvol3.png"
   },
 {
     "id": "cassielvol3",
@@ -298,7 +298,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "May all your dreams come true tonight.",
-    "image": "images/cassielvol3.png"
+    "image": "images/vol-03/cassielvol3.png"
   },
 {
     "id": "maryvol3",
@@ -311,20 +311,20 @@
     "rarity": "Rare",
     "rewardAmount": 8,
     "message": "Gifts are for the nice, and wolves' teeth are for the naughty.",
-    "image": "images/maryvol3.png"
+    "image": "images/vol-03/maryvol3.png"
   },
 {
     "id": "noahvol3",
     "character": "Noah",
     "cardName": "The Chef",
     "volume": 3,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Male",
     "reward": "Diamonds",
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "The unsung hero of every great feast.",
-    "image": "images/noahvol3.png"
+    "image": "images/vol-03/noahvol3.png"
   },
 {
     "id": "hobellovol3",
@@ -337,7 +337,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Call for toads when there aren't enough elves!",
-    "image": "images/hobellovol3.png"
+    "image": "images/vol-03/hobellovol3.png"
   },
 
   {
@@ -351,7 +351,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "Together for every Christmas and the rest of our lives.",
-    "image": "images/maxfallvol3.png"
+    "image": "images/vol-03/maxfallvol3.png"
   },
  {
     "id": "michaelvol4",
@@ -364,20 +364,20 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "He can handle anything except for you.",
-    "image": "images/michaelvol4.png"
+    "image": "images/vol-04/michaelvol4.png"
   },
 {
     "id": "yanvol4",
     "character": "Yan",
     "cardName": "Wicked Games",
     "volume": 4,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Male",
     "reward": "Cups",
     "rarity": "Rare",
     "rewardAmount": 8,
     "message": "Love is worth fighting for, even if you have to get in the ring.",
-    "image": "images/yanvol4.png"
+    "image": "images/vol-04/yanvol4.png"
   },
 {
     "id": "lucifervol4",
@@ -390,7 +390,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "You're the most precious treasure in this library.",
-    "image": "images/lucifervol4.png"
+    "image": "images/vol-04/lucifervol4.png"
   },
 {
     "id": "francesvol4",
@@ -403,7 +403,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "We're connected now... I have to admit, I'm happy about it.",
-    "image": "images/francesvol4.png"
+    "image": "images/vol-04/francesvol4.png"
   },
 {
     "id": "tristanvol4",
@@ -416,7 +416,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "What could be more seductive than a dominant woman?",
-    "image": "images/tristanvol4.png"
+    "image": "images/vol-04/tristanvol4.png"
   },
 {
     "id": "minhyukvol4",
@@ -429,7 +429,7 @@
     "rarity": "Rare",
     "rewardAmount": 8,
     "message": "I'll become your sweetest temptation.",
-    "image": "images/minhyukvol4.png"
+    "image": "images/vol-04/minhyukvol4.png"
   },
 {
     "id": "cherryvol4",
@@ -442,7 +442,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "Why don't we go for a ride?",
-    "image": "images/cherryvol4.png"
+    "image": "images/vol-04/cherryvol4.png"
   },
 {
     "id": "griaranvol4",
@@ -455,7 +455,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "You're the poetry of love.",
-    "image": "images/griaranvol4.png"
+    "image": "images/vol-04/griaranvol4.png"
   },
 {
     "id": "carolinevol4",
@@ -468,7 +468,7 @@
     "rarity": "Epic",
     "rewardAmount": 120,
     "message": "Kings, your time is up. Queens reign now!",
-    "image": "images/carolinevol4.png"
+    "image": "images/vol-04/carolinevol4.png"
   },
 {
     "id": "warvol4",
@@ -481,7 +481,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Let the whole world wait.",
-    "image": "images/warvol4.png"
+    "image": "images/vol-04/warvol4.png"
   },
 
   {
@@ -495,7 +495,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "I may teach you bad things, but only if you ask me.",
-    "image": "images/malekvol4.png"
+    "image": "images/vol-04/malekvol4.png"
   },
 {
     "id": "draganvol5",
@@ -508,7 +508,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "I can use these hands for more than just splitting logs.",
-    "image": "images/draganvol5.png"
+    "image": "images/vol-05/draganvol5.png"
   },
 {
     "id": "jonasvol5",
@@ -521,7 +521,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "If you don't give me my clothes back, I'll leave like this.",
-    "image": "images/jonasvol5.png"
+    "image": "images/vol-05/jonasvol5.png"
   },
 {
     "id": "castielvol5",
@@ -534,7 +534,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "Are you ready to be seduced by my rhythm?",
-    "image": "images/castielvol5.png"
+    "image": "images/vol-05/castielvol5.png"
   },
 {
     "id": "vespervol5",
@@ -547,7 +547,7 @@
     "rarity": "Rare",
     "rewardAmount": 8,
     "message": "You're a threat to the pieces on my board... and to my heart.",
-    "image": "images/vespervol5.png"
+    "image": "images/vol-05/vespervol5.png"
   },
 {
     "id": "shinoodorivol5",
@@ -560,20 +560,20 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "I trus-st you with my s-secrets.",
-    "image": "images/shinoodorivol5.png"
+    "image": "images/vol-05/shinoodorivol5.png"
   },
 {
     "id": "gregvol5",
     "character": "Greg",
     "cardName": "Your Taxi's Here",
     "volume": 5,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Male",
     "reward": "Cups",
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "Next stop: love.",
-    "image": "images/gregvol5.png"
+    "image": "images/vol-05/gregvol5.png"
   },
 
   {
@@ -587,7 +587,7 @@
     "rarity": "Rare",
     "rewardAmount": 80,
     "message": "Love is the color in our lives that gives meaning to everything.",
-    "image": "images/raphaelvol5.png"
+    "image": "images/vol-05/raphaelvol5.png"
   },
 {
     "id": "simonvol5",
@@ -600,7 +600,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "I'll do what you want, but you must pose as I say.",
-    "image": "images/simonvol5.png"
+    "image": "images/vol-05/simonvol5.png"
   },
 {
     "id": "agniavol5",
@@ -613,20 +613,20 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "I bite, but not too hard: you might like it.",
-    "image": "images/agniavol5.png"
+    "image": "images/vol-05/agniavol5.png"
   },
 {
     "id": "borisvol5",
     "character": "Boris Romanov",
     "cardName": "Siberian Soul",
     "volume": 5,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Male",
     "reward": "Cups",
     "rarity": "Epic",
     "rewardAmount": 12,
     "message": "People's souls are reflected in each other like mirrors.",
-    "image": "images/borisvol5.png"
+    "image": "images/vol-05/borisvol5.png"
   },
 {
     "id": "agentwolfdoevol6",
@@ -639,20 +639,20 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "Looks like we'll need a lot of coffee tonight.",
-    "image": "images/agentwolfdoevol6.png"
+    "image": "images/vol-06/agentwolfdoevol6.png"
   },
 {
     "id": "donovanvol6",
     "character": "Donovan",
     "cardName": "Cigarette and Scalpel",
     "volume": 6,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Female",
     "reward": "Cups",
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Stay vigilant even if the other person in the room is dead.",
-    "image": "images/donovanvol6.png"
+    "image": "images/vol-06/donovanvol6.png"
   },
 {
     "id": "kaylavol6",
@@ -665,7 +665,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "A wave is not an obstacle, it's a challenge.",
-    "image": "images/kaylavol6.png"
+    "image": "images/vol-06/kaylavol6.png"
   },
 {
     "id": "masamunevol6",
@@ -678,7 +678,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "Life is a battle. The reward is a moment of beauty—you.",
-    "image": "images/masamunevol6.png"
+    "image": "images/vol-06/masamunevol6.png"
   },
 {
     "id": "derekvol6",
@@ -691,20 +691,20 @@
     "rarity": "Rare",
     "rewardAmount": 80,
     "message": "Evil never rests, but I'll always be a step ahead.",
-    "image": "images/derekvol6.png"
+    "image": "images/vol-06/derekvol6.png"
   },
 {
     "id": "killianvol6",
     "character": "Killian Lightwood",
     "cardName": "Dangerous Negotiations",
     "volume": 6,
-    "book": "Kali: Call of Darkness",
+    "book": "Kali — Call of Darkness",
     "gender": "Male",
     "reward": "Cups",
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "It's hard to keep cool with such persistent interlocutors.",
-    "image": "images/killianvol6.png"
+    "image": "images/vol-06/killianvol6.png"
   },
 {
     "id": "kayvol6",
@@ -717,7 +717,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "Empaths know how to negotiate.",
-    "image": "images/kayvol6.png"
+    "image": "images/vol-06/kayvol6.png"
   },
 {
     "id": "bertvol6",
@@ -730,7 +730,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "A moment of rest—then back to saving more lives.",
-    "image": "images/bertvol6.png"
+    "image": "images/vol-06/bertvol6.png"
   },
 
   {
@@ -744,7 +744,7 @@
     "rarity": "Epic",
     "rewardAmount": 120,
     "message": "It's my duty to capture the moments the world mustn't forget.",
-    "image": "images/lawrencevol6.png"
+    "image": "images/vol-06/lawrencevol6.png"
   },
   {
     "id": "yokevol6",
@@ -757,7 +757,7 @@
     "rarity": "Rare",
     "rewardAmount": 8,
     "message": "Where death lurks, I will fight for life.",
-    "image": "images/yokevol6.png"
+    "image": "images/vol-06/yokevol6.png"
   },
   {
     "id": "zanevol6",
@@ -770,7 +770,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "As long as I'm alive, this city won't fall.",
-    "image": "images/zanevol6.png"
+    "image": "images/vol-06/zanevol6.png"
   },
   {
     "id": "sunnyvol6",
@@ -783,7 +783,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "The storm rages, but I hear only the sweetness of your voice.",
-    "image": "images/sunnyvol6.png"
+    "image": "images/vol-06/sunnyvol6.png"
   },
   {
     "id": "amenvol7",
@@ -796,20 +796,20 @@
     "rarity": "Rare",
     "rewardAmount": 80,
     "message": "They say the epistates has a special instinct for shesmu...",
-    "image": "images/amenvol7.png"
+    "image": "images/vol-07/amenvol7.png"
   },
  {
     "id": "borisvol7",
     "character": "Boris Romanov",
     "cardName": "Brilliant Schemer",
     "volume": 7,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Male",
     "reward": "Cups",
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "The reports of my death are greatly exaggerated.",
-    "image": "images/borisvol7.png"
+    "image": "images/vol-07/borisvol7.png"
   },
   {
     "id": "simonvol7",
@@ -822,7 +822,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "What a pickle! The radiator is dead.",
-    "image": "images/simonvol7.png"
+    "image": "images/vol-07/simonvol7.png"
   },
  {
     "id": "shenvol7",
@@ -835,7 +835,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Looks like someone's about to get shocked",
-    "image": "images/shenvol7.png"
+    "image": "images/vol-07/shenvol7.png"
   },
  {
     "id": "plaguevol7",
@@ -848,7 +848,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "Smile, Shepha, for God's sake!",
-    "image": "images/plaguevol7.png"
+    "image": "images/vol-07/plaguevol7.png"
   },
 {
     "id": "diegovol8",
@@ -861,7 +861,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Ah, the world would be simply splendid if only it bowed to me!",
-    "image": "images/diegovol8.png"
+    "image": "images/vol-08/diegovol8.png"
   },
 {
     "id": "maskedmanvol8",
@@ -874,20 +874,20 @@
     "rarity": "Rare",
     "rewardAmount": 80,
     "message": "Admit it, you're onyl frightened of me because you're attracted to evil.",
-    "image": "images/maskedmanvol8.png"
+    "image": "images/vol-08/maskedmanvol8.png"
   },
 {
     "id": "amritvol8",
     "character": "Amrit Doobay",
     "cardName": "The Priest and The Sacrifice",
     "volume": 8,
-    "book": "Kali: Call of Darkness",
+    "book": "Kali — Call of Darkness",
     "gender": "Male",
     "reward": "Cups",
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "A sacrifice's scream on the altar is the song for the Dark Mother.",
-    "image": "images/amritvol8.png"
+    "image": "images/vol-08/amritvol8.png"
   },
 {
     "id": "deathvol8",
@@ -900,7 +900,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "You are my servants until the end of time!",
-    "image": "images/deathvol8.png"
+    "image": "images/vol-08/deathvol8.png"
   },
 {
     "id": "johnhallvol8",
@@ -913,20 +913,20 @@
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "I live in the darkness of Saintfour, and I will rise from it!",
-    "image": "images/johnhallvol8.png"
+    "image": "images/vol-08/johnhallvol8.png"
   },
 {
     "id": "kalivol8",
     "character": "Kali",
     "cardName": "Awakening the Darkness",
     "volume": 8,
-    "book": ["Kali: Call of Darkness", "Kali: Flame of Samsara"],
+    "book": ["Kali — Call of Darkness", "Kali — Flame of Samsara"],
     "gender": "Female",
     "reward": "Diamonds",
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "The Dark Mother would never abandon her child... She has come for you.",
-    "image": "images/kalivol8.png"
+    "image": "images/vol-08/kalivol8.png"
   },
 {
     "id": "orlokvol8",
@@ -939,7 +939,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Let me invite you to my ball. The previous guests have grown weary.",
-    "image": "images/orlokvol8.png"
+    "image": "images/vol-08/orlokvol8.png"
   },
 {
     "id": "muzzlemunchervol8",
@@ -952,7 +952,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "Taste the poisonous flower and reveal your true face like I once had to!",
-    "image": "images/muzzlemunchervol8.png"
+    "image": "images/vol-08/muzzlemunchervol8.png"
   },
 {
     "id": "vicarvol8",
@@ -965,20 +965,20 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "I'm truly sorry. But executions are inevitable.",
-    "image": "images/vicarvol8.png"
+    "image": "images/vol-08/vicarvol8.png"
   },
 {
     "id": "cainvol8",
     "character": "Cain",
     "cardName": "Deal With the Devil",
     "volume": 8,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Male",
     "reward": "Diamonds",
     "rarity": "Rare",
     "rewardAmount": 80,
     "message": "The one rejected by the light has to step into the darkness.",
-    "image": "images/cainvol8.png"
+    "image": "images/vol-08/cainvol8.png"
   },
 {
     "id": "primavol8",
@@ -991,7 +991,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "Follow the Tarot cards, and you'll find the way out!",
-    "image": "images/primavol8.png"
+    "image": "images/vol-08/primavol8.png"
   },
 {
     "id": "malekvol8",
@@ -1004,7 +1004,7 @@
     "rarity": "Epic",
     "rewardAmount": 120,
     "message": "The jaws of hell have opened, and now I'll do the talking.",
-    "image": "images/malekvol8.png"
+    "image": "images/vol-08/malekvol8.png"
   },
 {
     "id": "threxiavol8",
@@ -1017,7 +1017,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Let's be soulmates... where you nourish me with your soul.",
-    "image": "images/threxiavol8.png"
+    "image": "images/vol-08/threxiavol8.png"
   },
 {
     "id": "ethanwoodvol8",
@@ -1030,7 +1030,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "Humans are simply food. The Moon decided so.",
-    "image": "images/ethanwoodvol8.png"
+    "image": "images/vol-08/ethanwoodvol8.png"
   },
 {
     "id": "tatavol9",
@@ -1043,7 +1043,7 @@
     "rarity": "Rare",
     "rewardAmount": 80,
     "message": "I wished for you.",
-    "image": "images/tatavol9.png"
+    "image": "images/vol-09/tatavol9.png"
   },
 {
     "id": "sirinvol9",
@@ -1056,20 +1056,20 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "I'll curse the whole world for you.",
-    "image": "images/sirinvol9.png"
+    "image": "images/vol-09/sirinvol9.png"
   },
 {
     "id": "annavol9",
     "character": "Anna",
     "cardName": "Love Injection",
     "volume": 9,
-    "book": ["Heaven's Secret: Requiem", "Heaven's Secret 3"],
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
     "gender": "Female",
     "reward": "Diamonds",
     "rarity": "Rare",
     "rewardAmount": 80,
     "message": "An instant injection of romantic dependency, for which there is no antidote.",
-    "image": "images/annavol9.png"
+    "image": "images/vol-09/annavol9.png"
   },
 {
     "id": "cynthiavol9",
@@ -1082,7 +1082,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "The world quiets when I'm where I belong, with my cat by my side.",
-    "image": "images/cynthiavol9.png"
+    "image": "images/vol-09/cynthiavol9.png"
   },
 {
     "id": "liavol9",
@@ -1095,7 +1095,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "Through the noise of concertss and the whirlwind of speed, I burst into your heart.",
-    "image": "images/liavol9.png"
+    "image": "images/vol-09/liavol9.png"
   },
 {
     "id": "phoebevol9",
@@ -1108,7 +1108,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "Don't worry, I'm here for you... but you worried me sick, trouble!",
-    "image": "images/phoebevol9.png"
+    "image": "images/vol-09/phoebevol9.png"
   },
 {
     "id": "suvol9",
@@ -1121,7 +1121,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "Don't think about tomorrow, just step into the depths where the water lilies bloom.",
-    "image": "images/suvol9.png"
+    "image": "images/vol-09/suvol9.png"
   },
 {
     "id": "vanoravol9",
@@ -1134,7 +1134,7 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "You carry the dreams I can only trace in ink.",
-    "image": "images/vanoravol9.png"
+    "image": "images/vol-09/vanoravol9.png"
   },
 {
     "id": "lizvol9",
@@ -1147,7 +1147,7 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "Where the ice ends, love begins.",
-    "image": "images/lizvol9.png"
+    "image": "images/vol-09/lizvol9.png"
   },
 {
     "id": "mimivol9",
@@ -1160,7 +1160,7 @@
     "rarity": "Epic",
     "rewardAmount": 12,
     "message": "Sweet like raspberries, deadly like a poison.",
-    "image": "images/mimivol9.png"
+    "image": "images/vol-09/mimivol9.png"
   },
 {
     "id": "daniellevol9",
@@ -1173,7 +1173,7 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "Access code is love.",
-    "image": "images/daniellevol9.png"
+    "image": "images/vol-09/daniellevol9.png"
   },
 {
     "id": "glimvol9",
@@ -1186,7 +1186,592 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "I get butterflies when I'm beside you.",
-    "image": "images/glimvol9.png"
-  }
+    "image": "images/vol-09/glimvol9.png"
+  },
+{
+    "id": "aslanvol10",
+    "character": "Aslan / Leo Nolan",
+    "cardName": "Unity of Souls",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Rare",
+    "rewardAmount": 8,
+    "message": "One can tame, but I choose to care and love.",
+    "image": "images/vol-10/aslanvol10.png"
+  },
+{
+    "id": "vladvol10",
+    "character": "Vlad",
+    "cardName": "Memory",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "What hurts the most is what keeps you alive.",
+    "image": "images/vol-10/vladvol10.png"
+  },
+{
+    "id": "mehmedvol10",
+    "character": "Mehmed",
+    "cardName": "The art of waiting",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Uncommon",
+    "rewardAmount": 4,
+    "message": "Centuries of solitude will burn in the bright moments of our meeting.",
+    "image": "images/vol-10/mehmedvol10.png"
+  },
+{
+    "id": "hasanvol10",
+    "character": "Hasan / Ezel",
+    "cardName": "Slippery slope",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "Hearts and souls are untouched by distance.",
+    "image": "images/vol-10/hasanvol10.png"
+  },
+{
+    "id": "alexandravol10",
+    "character": "Alexandra / Sandra",
+    "cardName": "Unwedded",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Female",
+    "reward": "Cups",
+    "rarity": "Rare",
+    "rewardAmount": 8,
+    "message": "I'd give my gift, my magic, for just one dance with you.",
+    "image": "images/vol-10/alexandravol10.png"
+  },
+{
+    "id": "noevol10",
+    "character": "Noe",
+    "cardName": "Joker",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "How about a little mischief? I promise—it's all pretend.",
+    "image": "images/vol-10/noevol10.png"
+  },
+{
+    "id": "septentrionvol10",
+    "character": "Septentrion",
+    "cardName": "Devilish charm",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "Every granted wish has its price... but I'll never speak of yours.",
+    "image": "images/vol-10/septentrionvol10.png"
+  },
+{
+    "id": "nuraykemalvol10",
+    "character": "Nuray and Kemal",
+    "cardName": "Breeze of freedom",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": ["Female", "Male"],
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "To dare to love is to dare to live. Even if life itself is the price.",
+    "image": "images/vol-10/nuraykemalvol10.png"
+  },
+{
+    "id": "raduvol10",
+    "character": "Radu",
+    "cardName": "Darkness of remorse",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "Death isn't enough to set things right.",
+    "image": "images/vol-10/raduvol10.png"
+  },
+{
+    "id": "gardenianosferatuvol10",
+    "character": "Gardenia and Nosferatu",
+    "cardName": "Lady and gentleman",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": ["Female", "Male"],
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "True aristocrats never shy away from an adventure.",
+    "image": "images/vol-10/gardenianosferatuvol10.png"
+  },
 
+{
+    "id": "aslanvladvol10",
+    "character": "Aslan and Vlad",
+    "cardName": "Light and darkness",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Epic",
+    "rewardAmount": 12,
+    "message": "If light and darkness are inseparable, then I'll become the darkness so you can have the light.",
+    "image": "images/vol-10/aslanvladvol10.png"
+  },
+{
+    "id": "ilincavol10",
+    "character": "Ilinca",
+    "cardName": "Defender",
+    "volume": 10,
+    "book": "Dracula: A Love Story",
+    "gender": "Female",
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "Fearlessness, honor, and devotion—these are the key ingredients of magic.",
+    "image": "images/vol-10/ilincavol10.png"
+  },
+{
+    "id": "kazuvol11",
+    "character": "Kazu",
+    "cardName": "My fluffies",
+    "volume": 11,
+    "book": "Legend of the Willow",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Epic",
+    "rewardAmount": 120,
+    "message": "Dad's kind, angry eyes",
+    "image": "images/vol-11/kazuvol11.png"
+  },
+{
+    "id": "hobellovol11",
+    "character": "Hobello",
+    "cardName": "The best companion",
+    "volume": 11,
+    "book": "Shakespeare's Code",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "You're the worst witch, and I'm the best companion. We make a perfect duo, don't we?",
+    "image": "images/vol-11/hobellovol11.png"
+  },
+{
+    "id": "deanvol11",
+    "character": "Dean",
+    "cardName": "Ramen for two",
+    "volume": 11,
+    "book": "Garden of Eden",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "Foxy, give me your paw. Or I'll eat all the noodles myself!",
+    "image": "images/vol-11/deanvol11.png"
+  },
+{
+    "id": "davidvol11",
+    "character": "David",
+    "cardName": "An intense grilling",
+    "volume": 11,
+    "book": ["Astrea's Broken Heart", "Heaven's Secret 3"],
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Rare",
+    "rewardAmount": 80,
+    "message": "You called the wrong lawyer.",
+    "image": "images/vol-11/davidvol11.png"
+  },
+{
+    "id": "christianvol11",
+    "character": "Christian de Clare",
+    "cardName": "A Love Sonata",
+    "volume": 11,
+    "book": "Kali — Flame of Samsara",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Uncommon",
+    "rewardAmount": 4,
+    "message": "Let the music speak of my feelings for you.",
+    "image": "images/vol-11/christianvol11.png"
+  },
+{
+    "id": "foelhvol11",
+    "character": "Foelh",
+    "cardName": "The Privilege",
+    "volume": 11,
+    "book": "The Thunderstorms Saga",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Rare",
+    "rewardAmount": 80,
+    "message": "I take what I want. And who I want.",
+    "image": "images/vol-11/foelhvol11.png"
+  },
+{
+    "id": "vincentvol11",
+    "character": "Vincent",
+    "cardName": "Back to the Abyss",
+    "volume": 11,
+    "book": "Soulless",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "Demons were never meant to walk this world.",
+    "image": "images/vol-11/vincentvol11.png"
+  },
+{
+    "id": "safaavol11",
+    "character": "Safaa",
+    "cardName": "My Favorite Thing",
+    "volume": 11,
+    "book": "The Missing",
+    "gender": "Female",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "The job can be a challenge, but we always find peace in a good story.",
+    "image": "images/vol-11/safaavol11.png"
+  },
+{
+    "id": "anubisvol11",
+    "character": "Anubis",
+    "cardName": "The Great Guardian",
+    "volume": 11,
+    "book": "Song of the Crimson Nile",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "Stay with me, so we can rule the Duat together.",
+    "image": "images/vol-11/anubisvol11.png"
+  },
+{
+    "id": "renatovol11",
+    "character": "Renato Bernardi",
+    "cardName": "The Prayer",
+    "volume": 11,
+    "book": "W: Time Catcher",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "I will pray for the safety of the most precious thing in my life—you, my light.",
+    "image": "images/vol-11/renatovol11.png"
+  },
+{
+    "id": "jeannevol11",
+    "character": "Jeanne",
+    "cardName": "The Secret Recipe",
+    "volume": 11,
+    "book": "Te Amo — Vol. 1",
+    "gender": "Female",
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "Why is my coffee the best in Louisiana? Because it's made with love.",
+    "image": "images/vol-11/jeannevol11.png"
+  },
+{
+    "id": "malbontevol12",
+    "character": "Malbonte",
+    "cardName": "More Mal than Bonte",
+    "volume": 12,
+    "book": ["Heaven's Secret", "Heaven's Secret 2", "Heaven's Secret 3"],
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Epic",
+    "rewardAmount": 120,
+    "message": "No need to pity me, because I won't pity anyone.",
+    "image": "images/vol-12/malbontevol12.png"
+  },
+{
+    "id": "velloravol12",
+    "character": "Vellora",
+    "cardName": "Esshaian archer",
+    "volume": 12,
+    "book": "The Thunderstorms Saga",
+    "gender": "Female",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "It's easier with monsters. You know what to expect from them.",
+    "image": "images/vol-12/velloravol12.png"
+  },
+{
+    "id": "volot1vol12",
+    "character": "Volot",
+    "cardName": "The priest's punishment",
+    "volume": 12,
+    "book": "And the Haze Will Take Us",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "The priest knows neither mercy nor remorse.",
+    "image": "images/vol-12/volot1vol12.png"
+  },
+{
+    "id": "volot2vol12",
+    "character": "Volot",
+    "cardName": "The priest's punishment",
+    "volume": 12,
+    "book": "And the Haze Will Take Us",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "The priest knows neither mercy nor remorse.",
+    "image": "images/vol-12/volot2vol12.png"
+  },
+{
+    "id": "hungervol12",
+    "character": "Hunger",
+    "cardName": "The Horseman's smoke break",
+    "volume": 12,
+    "book": ["Heaven's Secret 2", "Heaven's Secret 3"],
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "The end of the world can wait.",
+    "image": "images/vol-12/hungervol12.png"
+  },
+{
+    "id": "taivol12",
+    "character": "Tai",
+    "cardName": "Thinking of you...",
+    "volume": 12,
+    "book": "The Thunderstorms Saga",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Uncommon",
+    "rewardAmount": 40,
+    "message": "Your pride is charming.",
+    "image": "images/vol-12/taivol12.png"
+  },
+{
+    "id": "albavol12",
+    "character": "Alba",
+    "cardName": "The bikerider",
+    "volume": 12,
+    "book": "The Missing",
+    "gender": "Female",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "Whenever you call, I'll be there.",
+    "image": "images/vol-12/albavol12.png"
+  },
+{
+    "id": "blainevol12",
+    "character": "Blaine",
+    "cardName": "Perfect fit",
+    "volume": 12,
+    "book": "Theodora",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "Every stitch holds thoughts of you.",
+    "image": "images/vol-12/blainevol12.png"
+  },
+{
+    "id": "lukathiagovol12",
+    "character": "Luka and Thiago",
+    "cardName": "Unlock my love",
+    "volume": 12,
+    "book": "The One Vol. 1",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "The pain is as sweet as the pleasure",
+    "image": "images/vol-12/lukathiagovol12.png"
+  },
+{
+    "id": "mikaelvol12",
+    "character": "Mikael",
+    "cardName": "Shackles of duty",
+    "volume": 12,
+    "book": ["Astrea's Broken Heart", "Heaven's Secret 3"],
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Rare",
+    "rewardAmount": 80,
+    "message": "Duty may shackle the hands, but it holds no sway over the heart.",
+    "image": "images/vol-12/mikaelvol12.png"
+  },
+{
+    "id": "tonyvol12",
+    "character": "Tony Brooks",
+    "cardName": "Through Hell",
+    "volume": 12,
+    "book": "Love, Sin & Evil Vol. 1",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "I am of darkness, but not bound to serve it.",
+    "image": "images/vol-12/tonyvol12.png"
+  },
+{
+    "id": "saraswativol12",
+    "character": "Saraswati Basu",
+    "cardName": "Grace and power",
+    "volume": 12,
+    "book": "Kali — Flame of Samsara",
+    "gender": "Female",
+    "reward": "Diamonds",
+    "rarity": "Rare",
+    "rewardAmount": 80,
+    "message": "Power lies not in strength, but in intellect and charisma.",
+    "image": "images/vol-12/saraswativol12.png"
+  },
+{
+    "id": "satoshivol13",
+    "character": "Satoshi",
+    "cardName": "The Art of Transformation",
+    "volume": 13,
+    "book": "Legend of the Willow",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Uncommon",
+    "rewardAmount": 4,
+    "message": "You can only dream of being on my makeup level.",
+    "image": "images/vol-13/satoshivol13.png"
+  },
+{
+    "id": "kiranvol13",
+    "character": "Kiran Basu",
+    "cardName": "Basu Lion Cub",
+    "volume": 13,
+    "book": "Kali — Call of Darkness",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "Just don't go too crazy over me when I win.",
+    "image": "images/vol-13/kiranvol13.png"
+  },
+{
+    "id": "radhavol13",
+    "character": "Radha Basu",
+    "cardName": "Addition to the Pride",
+    "volume": 13,
+    "book": "Kali — Flame of Samsara",
+    "gender": "Female",
+    "reward": "Cups",
+    "rarity": "Uncommon",
+    "rewardAmount": 4,
+    "message": "The fruit of forbidden love will become the continuation of our story.",
+    "image": "images/vol-13/radhavol13.png"
+  },
+{
+    "id": "hotchvol13",
+    "character": "Hotch",
+    "cardName": "Tailed Assistant",
+    "volume": 13,
+    "book": "Gladiator Chronicles",
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Common",
+    "rewardAmount": 20,
+    "message": "Two hands are great, but two hands and four paws are even better!",
+    "image": "images/vol-13/hotchvol13.png"
+  },
+{
+    "id": "adisammyvol13",
+    "character": "Adi and Sammy",
+    "cardName": "The Lovers' Bar",
+    "volume": 13,
+    "book": ["Heaven's Secret", "Heaven's Secret 2", "Heaven's Secret 3"],
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Rare",
+    "rewardAmount": 80,
+    "message": "Heaven is wherever we are together.",
+    "image": "images/vol-13/adisammyvol13.png"
+  },
+{
+    "id": "lesternoahvol13",
+    "character": "Lester and Noah",
+    "cardName": "The Worst Bromance",
+    "volume": 13,
+    "book": ["Heaven's Secret — Requiem", "Heaven's Secret 3"],
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Epic",
+    "rewardAmount": 120,
+    "message": "Sometimes I feel like wrapping my arms around him... and strangling him just a little.",
+    "image": "images/vol-13/lesternoahvol13.png"
+  },
+{
+    "id": "ariavol13",
+    "character": "Aria",
+    "cardName": "The Dark Idol",
+    "volume": 13,
+    "book": "Garden of Eden",
+    "gender": "Female",
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "They worship me... They fear me, but they want me.",
+    "image": "images/vol-13/ariavol13.png"
+  },
+{
+    "id": "sophiaxandervol13",
+    "character": "Sophia and Xander",
+    "cardName": "Elegance in Their Blood",
+    "volume": 13,
+    "book": "Moonborn",
+    "gender": ["Female", "Male"],
+    "reward": "Cups",
+    "rarity": "Common",
+    "rewardAmount": 2,
+    "message": "True beauty is eternal.",
+    "image": "images/vol-13/sophiaxandervol13.png"
+  },
+{
+    "id": "geraltvol13",
+    "character": "Geralt",
+    "cardName": "The Strict Teacher",
+    "volume": 13,
+    "book": ["Heaven's Secret", "Heaven's Secret 2"],
+    "gender": "Male",
+    "reward": "Diamonds",
+    "rarity": "Rare",
+    "rewardAmount": 80,
+    "message": "Let's talk about your conduct.",
+    "image": "images/vol-13/geraltvol13.png"
+  },
+{
+    "id": "foxyvol13",
+    "character": "Foxy",
+    "cardName": "The Digital Fox",
+    "volume": 13,
+    "book": "Psi",
+    "gender": "Male",
+    "reward": "Cups",
+    "rarity": "Uncommon",
+    "rewardAmount": 4,
+    "message": "So, why does the Vicar indeed suck?",
+    "image": "images/vol-13/foxyvol13.png"
+  }
 ]
