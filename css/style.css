@@ -329,6 +329,20 @@ body.dark #clear-sorting:hover {
   font-size: 0.85rem;
 }
 
+/* ---------- Reward image display ---------- */
+
+.reward {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.reward-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
 /* ---------- Rarity colour coding ---------- */
 
 .rarity-common {

@@ -65,10 +65,16 @@ function formatRewardShort(card) {
   if (!card.reward || card.rewardAmount == null) return "";
 
   const type = card.reward.toLowerCase();
-  const isCups = type === "cups" || type === "cup";
+  const icon = (type === "cups" || type === "cup")
+    ? "images/cup.png"
+    : "images/diamond.png";
 
-  const symbol = isCups ? "🍵" : "💎";
-  return `${card.rewardAmount}${symbol}`;
+  return `
+    <span class="reward">
+      ${card.rewardAmount}
+      <img src="${icon}" alt="${card.reward}" class="reward-icon">
+    </span>
+  `;
 }
 
 // --- 3. Initialisation & data loading ---
@@ -700,7 +706,7 @@ function showCardDetails(card) {
   if (mVolumeEl) mVolumeEl.textContent = card.volume ?? "";
   if (mBookEl) mBookEl.textContent = bookDisplay;
   if (mGenderEl) mGenderEl.textContent = genderDisplay;
-  if (mRewardEl) mRewardEl.textContent = formatRewardShort(card);
+  if (mRewardEl) mRewardEl.innerHTML = formatRewardShort(card);
   if (mRarityEl) mRarityEl.textContent = card.rarity ?? "";
   if (mMessageEl) mMessageEl.textContent = card.message ?? "";
 
