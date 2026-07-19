@@ -343,10 +343,6 @@ body.dark #clear-sorting:hover {
     vertical-align: middle;
 }
 
-.cup-icon {
-    transform: translateY(-2px);
-}
-
 /* ---------- Rarity colour coding ---------- */
 
 .rarity-common {
