@@ -77,6 +77,17 @@ function formatRewardShort(card) {
   `;
 }
 
+// giving cups their own class to move them upwards
+
+const iconClass = isCups ? "reward-icon cup-icon" : "reward-icon";
+
+return `
+<span class="reward">
+  ${card.rewardAmount}
+  <img src="${icon}" alt="${card.reward}" class="${iconClass}">
+</span>
+`;
+
 // --- 3. Initialisation & data loading ---
 
 async function loadCards() {
