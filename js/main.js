@@ -339,9 +339,9 @@ function attachEventListeners() {
       showNextCard();
 
       // remove focus highlight after click
-      if (event.currentTarget && event.currentTarget.blur) {
-        event.currentTarget.blur();
-      }
+     requestAnimationFrame(() => {
+     event.currentTarget.blur();
+	});
     });
   }
 
