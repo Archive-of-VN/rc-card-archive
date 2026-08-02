@@ -572,9 +572,12 @@ body.dark .thumb-image {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(15, 23, 42, 0.95); /* more solid: full-screen feel */
+  background: rgba(15, 23, 42, 0.95);
   display: none;
-  overflow-y: hidden; /* no vertical scroll on overlay */
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-detail-overlay.open {
@@ -586,12 +589,23 @@ body.dark .thumb-image {
   max-width: 1100px;
   margin: 0 auto;
   padding: 1.2rem 1.75rem 1.4rem;
-  height: 100vh;         /* exactly viewport height */
+  min-height: 100%;
+  box-sizing: border-box;
   background: #ffffff;
-  border-radius: 0;       /* full-screen sheet, no card bubble */
+  border-radius: 0;
   box-shadow: none;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 899px) {
+  .mobile-detail-inner {
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  }
+
+  #mobile-detail-message {
+    margin-bottom: 1rem;
+  }
 }
 
 /* Headings */
@@ -822,17 +836,19 @@ body.dark .mobile-nav-arrow:hover {
     padding-top: 2.4rem;  /* leave room for the close chip */
   }
 
-  .mobile-detail-close {
-    position: absolute;
-    top: 0.6rem;
-    right: 0.75rem;
-    float: none;
-    padding: 0.25rem 0.6rem;
-    font-size: 0.8rem;
-    border-radius: 999px;
-    background: #0f172a;
-    color: #f9fafb;
-  }
+.mobile-detail-close {
+  position: sticky;
+  top: 0.6rem;
+  align-self: flex-end;
+  z-index: 20;
+  float: none;
+  padding: 0.25rem 0.6rem;
+  margin-bottom: -1.8rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #f9fafb;
+}
 
   .mobile-detail-close:hover {
     background: #111827;
@@ -864,7 +880,15 @@ body.dark .mobile-nav-arrow:hover {
    ========================================================= */
 
 @media (min-width: 900px) {
+  .mobile-detail-overlay {
+    overflow-y: hidden;
+  }
+
   .mobile-detail-inner {
+    height: 100vh;
+  }
+
+.mobile-detail-inner {
     max-width: 1100px;
     height: 100vh;
     margin: 0 auto;
