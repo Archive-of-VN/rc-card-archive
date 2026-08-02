@@ -776,6 +776,14 @@ body.dark .mobile-detail-close:hover {
   transition: opacity 0.25s ease, background 0.25s ease;
 }
 
+.mobile-nav-arrow {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav-arrow:focus {
+  outline: none;
+}
+
 .mobile-nav-prev {
   left: 0.6rem;
 }
