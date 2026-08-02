@@ -3437,7 +3437,13 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "They're alive as long as you believe in them...",
-    "image": "images/vol-26/sarahvol26-1.png"
+    "image": "images/vol-26/sarahvol26-1.png",
+    "variants": [
+    "images/vol-26/sarahvol26-1.png",
+    "images/vol-26/sarahvol26-2.png",
+    "images/vol-26/sarahvol26-3.png",
+    "images/vol-26/sarahvol26-4.png"
+    ]
   },
 {
     "id": "tissvol26",
@@ -3450,7 +3456,15 @@
     "rarity": "Rare",
     "rewardAmount": 80,
     "message": "Kelm aui, Narialm!",
-    "image": "images/vol-26/tissvol26-4.png"
+    "image": "images/vol-26/tissvol26-1.png",
+    "variants": [
+    "images/vol-26/tissvol26-1.png",
+    "images/vol-26/tissvol26-2.png",
+    "images/vol-26/tissvol26-3.png",
+    "images/vol-26/tissvol26-4.png",
+    "images/vol-26/tissvol26-5.png",
+    "images/vol-26/tissvol26-6.png"
+    ]
   },
 {
     "id": "vickyvol26",
@@ -3463,7 +3477,13 @@
     "rarity": "Uncommon",
     "rewardAmount": 40,
     "message": "When mouths fall silent and eyes grow dim, only the heart's voice remains.",
-    "image": "images/vol-26/vickyvol26-3.png"
+    "image": "images/vol-26/vickyvol26-1.png",
+    "variants": [
+    "images/vol-26/vickyvol26-1.png",
+    "images/vol-26/vickyvol26-2.png",
+    "images/vol-26/vickyvol26-3.png",
+    "images/vol-26/vickyvol26-4.png"
+    ]
   },
 {
     "id": "audreyvol26",
@@ -3495,7 +3515,13 @@
     "rarity": "Epic",
     "rewardAmount": 120,
     "message": "The world awaited a victim, but an executioner arrived.",
-    "image": "images/vol-26/lanevol26-4.png"
+    "image": "images/vol-26/lanevol26-1.png",
+    "variants": [
+    "images/vol-26/lanevol26-1.png",
+    "images/vol-26/lanevol26-2.png",
+    "images/vol-26/lanevol26-3.png",
+    "images/vol-26/lanevol26-4.png"
+    ]
   },
 {
     "id": "yasminvol26",
@@ -3508,7 +3534,13 @@
     "rarity": "Common",
     "rewardAmount": 2,
     "message": "I dream, I dance, I fight, and I bloom!",
-    "image": "images/vol-26/yasminvol26.png"
+    "image": "images/vol-26/yasminvol26-1.png",
+    "variants": [
+    "images/vol-26/yasminvol26-1.png",
+    "images/vol-26/yasminvol26-2.png",
+    "images/vol-26/yasminvol26-3.png",
+    "images/vol-26/yasminvol26-4.png"
+    ]
   },
 {
     "id": "lirenvol26",
@@ -3521,7 +3553,13 @@
     "rarity": "Rare",
     "rewardAmount": 80,
     "message": "It's not enough for me to gaze at the horizon. I want to know what lies beyond it!",
-    "image": "images/vol-26/lirenvol26-1.png"
+    "image": "images/vol-26/lirenvol26-1.png",
+    "variants": [
+    "images/vol-26/lirenvol26-1.png",
+    "images/vol-26/lirenvol26-2.png",
+    "images/vol-26/lirenvol26-3.png",
+    "images/vol-26/lirenvol26-4.png"
+    ]
   },
 {
     "id": "meivol26",
@@ -3534,7 +3572,12 @@
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "Lift her from her knees!",
-    "image": "images/vol-26/meivol26.png"
+    "image": "images/vol-26/meivol26-1.png",
+    "variants": [
+    "images/vol-26/meivol26-1.png",
+    "images/vol-26/meivol26-2.png",
+    "images/vol-26/meivol26-3.png"
+    ]
   },
 {
     "id": "selenavol26",
@@ -3547,7 +3590,13 @@
     "rarity": "Common",
     "rewardAmount": 20,
     "message": "The path reveals itself to the one who keeps walking.",
-    "image": "images/vol-26/selenavol26-2.png"
+    "image": "images/vol-26/selenavol26-1.png",
+    "variants": [
+    "images/vol-26/selenavol26-1.png",
+    "images/vol-26/selenavol26-2.png",
+    "images/vol-26/selenavol26-3.png",
+    "images/vol-26/selenavol26-4.png"
+    ]
   },
 {
     "id": "elivol27",
