@@ -23,6 +23,9 @@ let currentSort = {
 let currentList = [];
 let currentIndex = -1;
 
+// Currently selected appearance within the open card
+let currentVariantIndex = 0;
+
 
 // --- 2. Theme (light/dark) ---
 
@@ -660,6 +663,86 @@ function scrollToCurrentCard() {
   scrollTableToCard(card.id);
 }
 
+function renderCardVariants(card) {
+  const variantsContainer = document.getElementById("mobile-detail-variants");
+  const thumbnailsContainer = document.getElementById("mobile-detail-variant-thumbnails");
+  const countElement = document.getElementById("mobile-detail-variant-count");
+
+  if (!variantsContainer || !thumbnailsContainer || !countElement) return;
+
+  const variants = Array.isArray(card.variants)
+    ? card.variants.filter(Boolean)
+    : [];
+
+  // No variants, or only one image: don't show the selector
+  if (variants.length <= 1) {
+    variantsContainer.classList.add("hidden");
+    thumbnailsContainer.innerHTML = "";
+    countElement.textContent = "";
+    return;
+  }
+
+  // Keep the index within the available range
+  if (currentVariantIndex < 0 || currentVariantIndex >= variants.length) {
+    currentVariantIndex = 0;
+  }
+
+  variantsContainer.classList.remove("hidden");
+  thumbnailsContainer.innerHTML = "";
+
+  variants.forEach((imagePath, index) => {
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className = "variant-thumbnail";
+
+    if (index === currentVariantIndex) {
+      button.classList.add("selected");
+    }
+
+    button.setAttribute("aria-label", `Appearance ${index + 1} of ${variants.length}`);
+
+    const img = document.createElement("img");
+    img.src = imagePath;
+    img.alt = `Appearance ${index + 1}`;
+    img.loading = "lazy";
+    img.decoding = "async";
+
+    button.appendChild(img);
+
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      currentVariantIndex = index;
+
+      const mainImage = document.getElementById("mobile-detail-image");
+
+      if (mainImage) {
+        mainImage.src = variants[currentVariantIndex];
+        mainImage.alt = `${card.character ?? ""} – ${card.cardName ?? ""}`;
+      }
+
+      // Update selected thumbnail
+      thumbnailsContainer
+        .querySelectorAll(".variant-thumbnail")
+        .forEach((thumbnail, thumbnailIndex) => {
+          thumbnail.classList.toggle(
+            "selected",
+            thumbnailIndex === currentVariantIndex
+          );
+        });
+
+      countElement.textContent =
+        `${currentVariantIndex + 1} / ${variants.length}`;
+    });
+
+    thumbnailsContainer.appendChild(button);
+  });
+
+  countElement.textContent =
+    `${currentVariantIndex + 1} / ${variants.length}`;
+}
+
 function showCardDetails(card) {
   // Derived display strings
   const bookDisplay = Array.isArray(card.book)
@@ -689,12 +772,37 @@ function showCardDetails(card) {
   // image
   if (card.image && mImageWrapper && mImageEl) {
     mImageWrapper.classList.remove("hidden");
-    mImageEl.src = card.image;
+
+    // Start every newly opened card on its representative image
+    currentVariantIndex = 0;
+
+    const variants = Array.isArray(card.variants)
+      ? card.variants.filter(Boolean)
+      : [];
+
+    // If variants exist, use the first variant as the initial image.
+    // Otherwise use the normal card.image.
+    if (variants.length > 0) {
+      mImageEl.src = variants[0];
+    } else {
+      mImageEl.src = card.image;
+    }
+
     mImageEl.alt = `${card.character ?? ""} – ${card.cardName ?? ""}`;
+
+    renderCardVariants(card);
+
   } else if (mImageWrapper && mImageEl) {
     mImageWrapper.classList.add("hidden");
     mImageEl.removeAttribute("src");
     mImageEl.alt = "";
+
+    const variantsContainer =
+      document.getElementById("mobile-detail-variants");
+
+    if (variantsContainer) {
+      variantsContainer.classList.add("hidden");
+    }
   }
 
   // text fields

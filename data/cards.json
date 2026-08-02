@@ -3476,8 +3476,14 @@
     "rarity": "Uncommon",
     "rewardAmount": 4,
     "message": "Let the darkness come. I'll keep reaching for the light.",
-    "image": "images/vol-26/audreyvol26.png"
-  },
+    "image": "images/vol-26/audreyvol26-1.png",
+    "variants": [
+    "images/vol-26/audreyvol26-1.png",
+    "images/vol-26/audreyvol26-2.png",
+    "images/vol-26/audreyvol26-3.png",
+    "images/vol-26/audreyvol26-4.png"
+    ]
+},
 {
     "id": "lanevol26",
     "character": "Lane",
