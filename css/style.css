@@ -837,13 +837,11 @@ body.dark .mobile-nav-arrow:hover {
   }
 
 .mobile-detail-close {
-  position: sticky;
+  position: absolute;
   top: 0.6rem;
-  align-self: flex-end;
-  z-index: 20;
+  right: 0.75rem;
   float: none;
   padding: 0.25rem 0.6rem;
-  margin-bottom: -1.8rem;
   font-size: 0.8rem;
   border-radius: 999px;
   background: #0f172a;
