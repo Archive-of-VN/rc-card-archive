@@ -2050,7 +2050,7 @@
 {
     "id": "jackievol15",
     "character": "Jackie",
-    "cardName": "Big Black Cannon",
+    "cardName": "The Man in Charge",
     "volume": 15,
     "book": "Sails in the Fog",
     "gender": "Male",
@@ -3579,7 +3579,7 @@
     "reward": "Cups",
     "rarity": "Uncommon",
     "rewardAmount": 4,
-    "message": "I know exactly how yo handle a tight fit and a hard ride.",
+    "message": "I know exactly how to handle a tight fit and a hard ride.",
     "image": "images/vol-27/fabianvol27.png"
   },
 {
